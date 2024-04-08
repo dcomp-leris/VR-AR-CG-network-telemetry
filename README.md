@@ -6,13 +6,15 @@ To simulate the AR application to collect the network traffic dataset, we consid
 
 ### (1-1) Experiment 1 
 ### ***[AR traffic collection (without glasses)]***
-We have three componenets for simulation:
+We have three componenets in this simulation simulation:
 
   ***-XR (AR or VR) glasses:*** XR (AR or VR) glasses is simulated with a computer streaming the scenes frames in specific ****resolution**** and ****frame rate**** (accordance with these features in the off-the-shelf XR glasses).
 
   ***-Network:*** The server and XR glasses are connected using Wi-Fi-5.0
 
   ***-Server:*** The server is a computer system receive the frames! and collected 
+  
+  ***-Network Traffic Collector Agent*** The agent collect the network traffic in pcap format
 
 
 
