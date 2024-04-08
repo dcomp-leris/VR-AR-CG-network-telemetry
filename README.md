@@ -100,3 +100,26 @@ This tool uses the set of frmaes (in png format) to generate video in specific f
 
 
 ## (2) CG traffic collection
+
+To collect Cloug Gaming network telemtry data, we use a gadget between the CG server and clients (players). This gadget, called Raspberry Pi (having P4Pi system installed), runs a virtual switch and it can collect InBand Network Telemetry data and Packet Captures.
+
+In the moment we are using only Xbox Cloud Gaming server in our experiments.
+
+![image](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/58492556/68a6c851-8863-43cd-aa0b-abb75a128d56)
+
+### (2-1) Experiments
+
+- Our experiments were made on two different network connections, **5G network** and **optical fiber wired connection**.
+- We collected at the moment data about three diferent games, that are: Fortnite, Forza Horizon 5 and Mortal Kombat 11. 
+- For each one, we played in one or two players.
+
+We made different experiments switching those variables, and collected InBand Network Telemtry (INT) data, more especially the depth of the (virtual, emulated by Raspberry Pi) switch  queue of packets, and the timedelta that the packets stays in it. Beside that, we also collect pcap, using Raspberry Pi too.
+
+### (2-2) Collection Methodology
+
+The games were played using laptop (one or two).
+To collect INT data, our Raspberry Pi runs a P4 program that write all information in special packets (with INT header), and send it back to one of laptops, when the data are saved. We send and save a packet by minute.
+
+
+
+
