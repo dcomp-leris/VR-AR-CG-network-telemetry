@@ -6,15 +6,15 @@ To simulate the AR application to collect the network traffic dataset, we consid
 
 ### (1-1) Experiment 1 
 ### ***[AR traffic collection (without glasses)]***
-We have three componenets in this simulation simulation:
+We have four componenets in this simulation:
 
-  ***-XR (AR or VR) glasses:*** XR (AR or VR) glasses is simulated with a computer streaming the scenes frames in specific ****resolution**** and ****frame rate**** (accordance with these features in the off-the-shelf XR glasses).
+  - ***XR (AR or VR) glasses***: it is simulated with a computer streaming the scenes frames in specific ****resolution**** and ****frame rate**** (accordance with these features in the off-the-shelf XR glasses).
 
-  ***-Network:*** The server and XR glasses are connected using Wi-Fi-5.0
+  - ***Network***: The server and XR glasses are connected using Wi-Fi-5.0
 
-  ***-Server:*** The server is a computer system receive the frames! and collected 
+  - ***Server***: The server is a computer system receive the frames! and collected 
   
-  ***-Network Traffic Collector Agent*** The agent collect the network traffic in pcap format
+  - ***Network Traffic Collector Agent***: The agent collect the network traffic in pcap format (tshark)
 
 
 
@@ -30,11 +30,11 @@ We need to generate and stream the video from the scenes (as if user is looking 
 The seven environment frames, publish by Microsoft in https://www.microsoft.com/en-us/research/project/rgb-d-dataset-7-scenes/, are used to make it close to user experience!
 Each sequence (seq-XX.zip) consists of 500-1000 frames. Each frame consists of three files:
 
-**Color**: frame-XXXXXX.color.png (RGB, 24-bit, PNG)
+- **Color**: frame-XXXXXX.color.png (RGB, 24-bit, PNG)
 
-**Depth**: frame-XXXXXX.depth.png (depth in millimeters, 16-bit, PNG, invalid depth is set to 65535).
+- **Depth**: frame-XXXXXX.depth.png (depth in millimeters, 16-bit, PNG, invalid depth is set to 65535).
 
-**Pose**: frame-XXXXXX.pose.txt (camera-to-world, 4×4 matrix in homogeneous coordinates).
+- **Pose**: frame-XXXXXX.pose.txt (camera-to-world, 4×4 matrix in homogeneous coordinates).
 
 In this experiment, we have two computer systems whose OS are **Linux ubuntu 22.04 LTS**. The computer which generates the stream as the XR (VR or AR) glasses will be called **XR system** and the computer simulated edge server is called **edge server**.
 To execute the commands, the name of the simulation system will be mentioned!
