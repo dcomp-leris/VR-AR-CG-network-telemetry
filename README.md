@@ -4,9 +4,7 @@
 To simulate the AR application to collect the network traffic dataset, we consider application testing model used in **ITU-T Rec. Q.4066 (09/2020) Testing procedures of augmented reality applications** (Fig.7-1). 
 ![image](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/21206801/dda5bf05-8567-4549-81ac-6a493fdcff9e)
 
-### (1-1) Experiment 1 
-### ***[AR traffic collection (without glasses)]***
-We have four componenets in this simulation:
+To simulate the AR application traffic, There are four componenets:
 
   - ***XR (AR or VR) glasses***: it is simulated with a computer streaming the scenes frames in specific ****resolution**** and ****frame rate**** (accordance with these features in the off-the-shelf XR glasses).
 
@@ -15,6 +13,12 @@ We have four componenets in this simulation:
   - ***Server***: The server is a computer system receive the frames! and collected 
   
   - ***Network Traffic Collector Agent***: The agent collect the network traffic in pcap format (tshark)
+
+
+
+### (1-1) Experiment1 
+### ***[AR traffic collection (without glasses)]***
+
 
 
 
@@ -55,15 +59,15 @@ This tool uses the set of frmaes (in png format) to generate video in specific f
 
     # ffmpeg -r [frame rate] -f image2 -s [resolution] -i [sequence of png files] -vcodec libx264 -crf 25 -pix_fmt yuv420p [video name in mp4]
  
- ***- [frame rate]*** -- > e.g. 30, 60, 90, 120 (fps)
+ - ***[frame rate]*** -- > e.g. 30, 60, 90, 120 (fps)
  
- ***- [resolution]*** --> e.g. 1920x1080 
+ - ***[resolution]*** --> e.g. 1920x1080 
 
- ***- [sequence of png files]*** --> e.g. img%03d.png  (for the files with img001.png, img002.png, ... , img999.png)
+ - ***[sequence of png files]*** --> e.g. img%03d.png  (for the files with img001.png, img002.png, ... , img999.png)
 
- ***- [video name in mp4]*** --> e.g. my_video_1920_1080.mp4
+ - ***[video name in mp4]*** --> e.g. my_video_1920_1080.mp4
 
- ***- libx264*** --> -vcodec libx264 is to set the encoding
+ - ***libx264*** --> -vcodec libx264 is to set the encoding
 
 **For example:**
 ![image](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/21206801/14b47fb2-f9df-4383-a5b0-27fe29d9a45d)
@@ -80,21 +84,21 @@ This tool uses the set of frmaes (in png format) to generate video in specific f
     # gst-launch-1.0 -v filesrc location=./video1080_30.mp4 ! decodebin ! videoconvert ! videoscale ! video/x-raw,width=1920,height=1080 ! videorate ! video/x-raw,framerate=60/1 ! x264enc tune=zerolatency bitrate=5000 ! rtph264pay config-interval=1 pt=96 ! udpsink host=[IP address] port=[Port#]
     
 
-***- [location=./video1080_30.mp4]*** --> location of the video
+- ***[location=./video1080_30.mp4]*** --> location of the video
 
-***- [width=1920,height=1080]***-->  resolution for streaming (This option can be neglected because it depends on the resolution of the video!)
+- ***[width=1920,height=1080]***-->  resolution for streaming (This option can be neglected because it depends on the resolution of the video!)
 
-***- [framerate=60/1]*** --> frame rate of the streaming (This option can be neglected because it depends on the frame rate of the video!)
+- ***[framerate=60/1]*** --> frame rate of the streaming (This option can be neglected because it depends on the frame rate of the video!)
 
-***- [x264enc]*** --> The encoding which is H.264
+- ***[x264enc]*** --> The encoding which is H.264
 
-***- [bitrate=5000]*** --> It is the bitrate of sampling! (More bitrate higher sampling and higher video quality!)
+- ***[bitrate=5000]*** --> It is the bitrate of sampling! (More bitrate higher sampling and higher video quality!)
 
-***- [rtph264pay]*** --> It is RTP protocol with H.264  encoding!
+- ***[rtph264pay]*** --> It is RTP protocol with H.264  encoding!
 
-***- [IP address]*** --> the edge server IP address e.g. 192.168.10.2
+- ***[IP address]*** --> the edge server IP address e.g. 192.168.10.2
 
-***- [Port#]*** --> the port number e.g. 5000
+- ***[Port#]*** --> the port number e.g. 5000
 
 **Output:**
 
