@@ -117,10 +117,13 @@ In the moment we are using only Xbox Cloud Gaming server in our experiments.
 
 We made different experiments switching those variables, and collected InBand Network Telemtry (INT) data, more especially the depth of the (virtual, emulated by Raspberry Pi) switch  queue of packets, and the timedelta that the packets stays in it. Beside that, we also collect pcap, using Raspberry Pi too.
 
-### (2-2) Collection Methodology
+### (2-2) Setup
 
-The games were played using laptop (one or two).
-To collect INT data, our Raspberry Pi runs a P4 program that write all information in special packets (with INT header), and send it back to one of laptops, when the data are saved. We send and save a packet by minute.
+Our setup is based in Raspberry Pi (Model 4), and one or two laptops.
+
+For Raspberry Pi we installed P4Pi system, a plataform that allows to design and deploy network data planes written in P4 language using this gadget. You can know more about and find tutorials about how to install and manage it [here](https://github.com/p4lang/p4pi/wiki). P4Pi runs a virtual switch, and you can choose two different targets, T4P4S and BMv2. We use **BMv2**. After setting it, we created and deployed in BMv2 a P4 program able to parse our INT header in a packet, save all INT data in it, and then deparse the header and send the packet back to our host.
+
+Our host is one of the laptops, and it runs two Python programs. The first one is responsible for creating INT packets (with INT header), and sending it to the host's network interface, one packet by second. The second program sniffs the network interface waiting for the INT packets, and, by each packet received, it get the fields that we need and save the values in our time series database. We are using [InfluxDB](https://www.influxdata.com/).
 
 
 
