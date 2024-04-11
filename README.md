@@ -1,7 +1,35 @@
 # VR-AR-CG-Network Telemetery 
 
 ## (1) AR traffic collection
-To simulate the AR application to collect the network traffic dataset, we consider application testing model used in **ITU-T Rec. Q.4066 (09/2020) Testing procedures of augmented reality applications** (Fig.7-1). 
+To simulate the AR application to collect the network traffic dataset, we consider application several experiments which  have been done with AR devices and without AR devices. 
+
+
+
+
+### (1-1) Experiment1 - (without VR/AR glasses)
+
+In this dataset, we wanted to collect the network traffic of the Augmented Reality (AR) use case in which a user is equipped with AR glasses and moving in the scene. The frames related to the scenes are sent to the edge server for rendering (UL) and AR glasses receive the rendered video (real+digital objects) from the edge server (DL). 
+
+#### (1-1-1) Methodology
+
+Two computers are connected via an access point, as illustrated in Figure 1. The network traffic collected at the edge server is referred to as Uplink traffic. Subsequently, video streaming, characterized by a specific resolution and frame rate with constant encoding bitrate (20-35 Mbps), is generated and designated as Downlink traffic, as depicted in Figure 2. 
+
+<p align="center">
+https://camo.githubusercontent.com/62904c1a70ed85e161748d77286936e1628c43e966793bbe222bbd688ae3cf70/68747470733a2f2f7777772e676f6f676c65617069732e636f6d2f646f776e6c6f61642f73746f726167652f76312f622f6b6167676c652d757365722d636f6e74656e742f6f2f696e626f7825324631383732333338312532463962393165343832626332396339393435376563313262343137393064346132253246415225323053656e6172696f283630292e706e673f67656e65726174696f6e3d3137303833383037333439323732343126616c743d6d65646961
+</p>
+<p align="center">
+<sub>Topology of the AR Network Traffic</sub>
+</p>
+
+
+The AR glasses is a device that streams the frames of the environment seen by the user and receive the digital object augmented to the real world (environment). 
+The traffic which sent from **VR/AR glasses** to the **edge server** is called ***Uplink (UL)***
+
+
+
+
+
+testing model used in **ITU-T Rec. Q.4066 (09/2020) Testing procedures of augmented reality applications** (Fig.7-1). 
 ![image](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/21206801/dda5bf05-8567-4549-81ac-6a493fdcff9e)
 
 To simulate the AR application traffic, There are four componenets:
