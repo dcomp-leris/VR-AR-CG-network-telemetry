@@ -1,7 +1,16 @@
 # VR-AR-CG-Network Telemetery 
 
-## (1) AR traffic collection
+## (1) AR traffic collection   
 To simulate the AR application to collect the network traffic dataset, we consider application several experiments which  have been done with AR devices and without AR devices. 
+
+<div align="left">
+  <img src="Meta3.png">
+   <img src="Xreal.png">
+</div>
+
+<div align="right">
+  <img src="Xreal.png">
+</div>
 
 
 ### (1-1) Experiment1 - (without VR/AR glasses)
@@ -69,13 +78,9 @@ This tool uses the set of frmaes (in png format) to generate video in specific f
     # ffmpeg -r [frame rate] -f image2 -s [resolution] -i [sequence of png files] -vcodec libx264 -crf 25 -pix_fmt yuv420p [video name in mp4]
  
  - ***[frame rate]*** -- > e.g. 30, 60, 90, 120 (fps)
- 
  - ***[resolution]*** --> e.g. 1920x1080 
-
  - ***[sequence of png files]*** --> e.g. img%03d.png  (for the files with img001.png, img002.png, ... , img999.png)
-
  - ***[video name in mp4]*** --> e.g. my_video_1920_1080.mp4
-
  - ***libx264*** --> -vcodec libx264 is to set the encoding
 
 **For example:**
@@ -94,19 +99,12 @@ This tool uses the set of frmaes (in png format) to generate video in specific f
     
 
 - ***[location=./video1080_30.mp4]*** --> location of the video
-
 - ***[width=1920,height=1080]***-->  resolution for streaming (This option can be neglected because it depends on the resolution of the video!)
-
 - ***[framerate=60/1]*** --> frame rate of the streaming (This option can be neglected because it depends on the frame rate of the video!)
-
 - ***[x264enc]*** --> The encoding which is H.264
-
 - ***[bitrate=5000]*** --> It is the bitrate of sampling! (More bitrate higher sampling and higher video quality!)
-
 - ***[rtph264pay]*** --> It is RTP protocol with H.264  encoding!
-
 - ***[IP address]*** --> the edge server IP address e.g. 192.168.10.2
-
 - ***[Port#]*** --> the port number e.g. 5000
 
 **Output:**
