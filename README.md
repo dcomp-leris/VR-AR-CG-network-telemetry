@@ -38,10 +38,9 @@ Three different types of files are available for those working on AR network tra
 (2) The videos are streamed on the Wireless network with the topology as shown in the paper and network traffic is collected with Tshark in PCAP format. This dataset is collected in 3459 sec (~57min and 39sec). The experiment is repeated two times, so the collected PCAP files are available in PCAP1 and PCAP2 folders. These folders are compressed (PCAP1.tar.xz and PCAP2.tar.xz). [Here!](https://kaggle.com/datasets/a906acd0ce4c8ee03048bf10c06573547ddca5a5c775ba592306bd04038f3a56)
 
 (3) The CSV datasets, created through statistical distribution with parameters outlined in the paper, are organized into three files:
-
-The AR glasses is a device that streams the frames of the environment seen by the user and receive the digital object augmented to the real world (environment). 
-The traffic which sent from **VR/AR glasses** to the **edge server** is called ***Uplink (UL)***
-
+- ***`AR.csv'***: Contains 5000 samples, encompassing both Uplink (UL) and Downlink (DL) data.
+- ***`DL.csv'***: Comprises 2000 samples, specifically representing Downlink data.
+- ***`UL.csv'***: Includes 3000 samples of Uplink data.
 
 
 
