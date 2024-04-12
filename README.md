@@ -18,12 +18,26 @@ Two computers are connected via an access point, as illustrated in Figure 1. The
 <div align="center">
   <img src="AR_Senario.png">
 </div>
-
-
 <p align="center">
-<sub>Topology of the AR Network Traffic</sub>
+<sub>Fig.(1). Topology of the AR Network Traffic</sub>
 </p>
 
+<div align="center">
+  <img src="Streaming_Features.png">
+</div>
+<p align="center">
+<sub>Fig(2). Streams Resolution & Frame Rate</sub>
+</p>
+
+#### (1-1-2) Content
+
+Three different types of files are available for those working on AR network traffic research.
+
+(1) The video of seven scenes using the Microsoft frames datasets https://www.microsoft.com/en-us/research/project/rgb-d-dataset-7-scenes/ are generated in specific ***frame rate*** and ***resolution*** are available in [Here](https://kaggle.com/datasets/a906acd0ce4c8ee03048bf10c06573547ddca5a5c775ba592306bd04038f3a56) with the name of `scenes.tar.xz'.
+
+(2) The videos are streamed on the Wireless network with the topology as shown in the paper and network traffic is collected with Tshark in PCAP format. This dataset is collected in 3459 sec (~57min and 39sec). The experiment is repeated two times, so the collected PCAP files are available in PCAP1 and PCAP2 folders. These folders are compressed (PCAP1.tar.xz and PCAP2.tar.xz). [Here!](https://kaggle.com/datasets/a906acd0ce4c8ee03048bf10c06573547ddca5a5c775ba592306bd04038f3a56)
+
+(3) The CSV datasets, created through statistical distribution with parameters outlined in the paper, are organized into three files:
 
 The AR glasses is a device that streams the frames of the environment seen by the user and receive the digital object augmented to the real world (environment). 
 The traffic which sent from **VR/AR glasses** to the **edge server** is called ***Uplink (UL)***
