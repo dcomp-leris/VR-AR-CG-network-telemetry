@@ -14,9 +14,12 @@ In this dataset, we wanted to collect the network traffic of the Augmented Reali
 
 Two computers are connected via an access point, as illustrated in Figure 1. The network traffic collected at the edge server is referred to as Uplink traffic. Subsequently, video streaming, characterized by a specific resolution and frame rate with constant encoding bitrate (20-35 Mbps), is generated and designated as Downlink traffic, as depicted in Figure 2. 
 
-<p align="center">
-https://camo.githubusercontent.com/62904c1a70ed85e161748d77286936e1628c43e966793bbe222bbd688ae3cf70/68747470733a2f2f7777772e676f6f676c65617069732e636f6d2f646f776e6c6f61642f73746f726167652f76312f622f6b6167676c652d757365722d636f6e74656e742f6f2f696e626f7825324631383732333338312532463962393165343832626332396339393435376563313262343137393064346132253246415225323053656e6172696f283630292e706e673f67656e65726174696f6e3d3137303833383037333439323732343126616c743d6d65646961
-</p>
+
+<div align="center">
+  <img src="AR_Senario.png">
+</div>
+
+
 <p align="center">
 <sub>Topology of the AR Network Traffic</sub>
 </p>
