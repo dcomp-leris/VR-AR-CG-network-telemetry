@@ -1,7 +1,10 @@
 # VR-AR-CG-Network Telemetery 
+In this repository, collected network traffic datasets regarding Virtual Reality (VR), Augmented Reality (AR), and Cloud Gaming (CG), are shared publicly. 
+
+
 
 ## (1) AR traffic collection   
-To simulate the AR application to collect the network traffic dataset, we consider application several experiments which  have been done with AR devices and without AR devices. 
+In this experiment, we use streaming the video to simulate the AR glasses Uplink (UL) & Downlink (DL) based on the off-the-shelf glasses! All datasets are in CSV format and either were generated statistically or extracted from the collected PCAP.
 
 <div align="left">
   <img src="Meta3.png">
@@ -17,23 +20,32 @@ To simulate the AR application to collect the network traffic dataset, we consid
 
 In this dataset, we wanted to collect the network traffic of the Augmented Reality (AR) use case in which a user is equipped with AR glasses and moving in the scene. The frames related to the scenes are sent to the edge server for rendering (UL) and AR glasses receive the rendered video (real+digital objects) from the edge server (DL). 
 
+<div align="center">
+  <img src="GeneralScenario.png">
+</div>
+
+<p align="center">
+<sub>Fig.(1) AR using the VR glasses with passthrough capability such as Meta Quest (2 or 3) </sub>
+</p>
+
+
 #### (1-1-1) Methodology
 
-Two computers are connected via an access point, as illustrated in Figure 1. The network traffic collected at the edge server is referred to as Uplink traffic. Subsequently, video streaming, characterized by a specific resolution and frame rate with constant encoding bitrate (20-35 Mbps), is generated and designated as Downlink traffic, as depicted in Figure 2. 
+Two computers are connected via an access point, as illustrated in Fig.2. The network traffic collected at the edge server is referred to as Uplink traffic. Subsequently, video streaming, characterized by a specific resolution and frame rate with constant encoding bitrate (20-35 Mbps), is generated and designated as Downlink traffic, as depicted in Fig.3.
 
 
 <div align="center">
   <img src="AR_Senario.png">
 </div>
 <p align="center">
-<sub>Fig.(1). Topology of the AR Network Traffic</sub>
+<sub>Fig.(2). Topology of the AR Network Traffic</sub>
 </p>
 
 <div align="center">
   <img src="Streaming_Features.png">
 </div>
 <p align="center">
-<sub>Fig(2). Streams Resolution & Frame Rate</sub>
+<sub>Fig(3). Streams Resolution & Frame Rate</sub>
 </p>
 
 #### (1-1-2) Content
@@ -57,9 +69,14 @@ In the CSV files, we have three features: IPI, FS, and IFI.
 - ***FS***: The size of the frame transmitted over the network.
 - ***IFI***: The interval between two consecutive frames.
 
-#### (1-1-4) Setup, Generate, & Collect the PCAP 
+#### (1-1-4) Setup, Generate Video Streaming, & Collect the PCAP 
+In the second dataset, we have the CSV files that have been extracted from the PCAPs. The pcaps have been collected in this scenario (Fig (1),(2), and (3)) and features extracted in the csv files which CSV files are available in this repository.
+
+***To setup ...***
 
 In this experiment, we have two computer systems whose OS are **Linux ubuntu 22.04 LTS**. The computer which generates the stream as the XR (VR or AR) glasses will be called **XR system** and the computer simulated edge server is called **edge server**. To execute the commands, the name of the [XR or edge] system will be mentioned!
+
+***Follow the instructions to generate the video and stream ...***
 
 ##### (1-1-4-1) Install FFmpeg [XR system]! [https://ffmpeg.org/]  
 This tool uses the set of frmaes (in png format) to generate video in specific frame rate and resolution!
