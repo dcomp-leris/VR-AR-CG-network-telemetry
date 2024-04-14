@@ -181,7 +181,17 @@ For all experiments we have a CSV file matching to INT data collected on each on
 - **uplink deq_timedelta** --> the time, in microseconds, that the packet spent in the uplink queue
 - **uplink enq_qdepth** --> the depth of the uplink queue when the packet was first enqueued, in units of number of packets
 
-Obs: downlink queue is the one of the traffic **received** by the client (packets of multimedia data sent by server); and uplink queue is the one of the traffic **sent** by client (packets of player inputs commands data).
+Obs: downlink queue is the one of the traffic **received** by the client (packets of multimedia data sent by server); and uplink queue is the one of the traffic **sent** from client (packets of player inputs commands data).
 
+#### (2-3-2) PCAP files
 
+For each experiment we have a PCAP file of the trace collected in Raspberry Pi interface. It can be found and downloaded [here!](https://kaggle.com/datasets/bff9c84e3e1db2659962e9ab161597059f4268d66d336f84073b59bed377528c) 
+
+#### (2-3-3) Features extracted files
+
+For each PCAP file, we extracted features and created CSV files with it. Features are:
+
+- ***IPI***: The difference between the arrival times of two consecutive packets.
+- ***FS***: The size of the frame transmitted over the network.
+- ***IFI***: The interval between two consecutive frames.
 
