@@ -54,7 +54,7 @@ Two computers are connected via an access point, as illustrated in Fig.2. The ne
 <body>
     <table>
         <tr>
-            <td>(1) Generate the Video (.mp4) from the pre-collected environment frames (.PNG format) (Specific resolution, frame rate) <a href="https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/edit/main/README.md#L98">How to generate</a>
+            <td>(1) Generate the Video (.mp4) from the pre-collected environment frames (.PNG format) (Specific resolution, frame rate) <a href="[https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/tree/main?tab=readme-ov-file#L98"]>How to generate</a>
  </td>
         </tr>
         <tr>
