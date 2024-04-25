@@ -48,6 +48,17 @@ Two computers are connected via an access point, as illustrated in Fig.2. The ne
 <sub>Fig(3). Streams Resolution & Frame Rate</sub>
 </p>
 
+**The steps in this experiment are:**
+
+  (1) Generate the Video (.mp4) from the pre-collected environment frames (.PNG format) (Specific resolution, frame rate)
+    
+  (2) Stream the Video from the system simulating the AR Glasses to the system simulating edge server as the Uplink (Specific resolution, frame rate, and bitrate)
+  
+  (3) Stream the Video from the system simulating the edge server to the system simulating AR Glasses as the Downlink (Specific resolution, frame rate, and bitrate)
+  
+  (4) Collect the network traffic using Tshark installed in the edge server (for Uplinik) and installed in AR Glasses (of course simulated Glasses!) (for Downlink)
+
+
 #### (1-1-2) Content
 
 Three different types of files are available for those working on AR network traffic research.
