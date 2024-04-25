@@ -54,7 +54,8 @@ Two computers are connected via an access point, as illustrated in Fig.2. The ne
 <body>
     <table>
         <tr>
-            <td>(1) Generate the Video (.mp4) from the pre-collected environment frames (.PNG format) (Specific resolution, frame rate)[Link to Line 50](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/edit/main/README.md#L98) </td>
+            <td>(1) Generate the Video (.mp4) from the pre-collected environment frames (.PNG format) (Specific resolution, frame rate) <a href="https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/edit/main/README.md#L98">How to generate</a>
+ </td>
         </tr>
         <tr>
             <td>(2) Stream the Video from the system simulating the AR Glasses to the system simulating edge server as the Uplink (Specific resolution, frame rate, and bitrate)</td>
