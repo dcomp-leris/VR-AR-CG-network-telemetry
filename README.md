@@ -16,7 +16,7 @@ In this experiment, we use streaming the video to simulate the AR glasses Uplink
 </div>
 
 
-### (1-1) Experiment1 - (without VR/AR glasses)
+### (1-1) Experiment1 - (Mimicking VR/AR Glasses!)
 
 In this dataset, we wanted to collect the network traffic of the Augmented Reality (AR) use case in which a user is equipped with AR glasses and moving in the scene. The frames related to the scenes are sent to the edge server for rendering (UL) and AR glasses receive the rendered video (real+digital objects) from the edge server (DL). 
 
@@ -73,6 +73,25 @@ Two computers are connected via an access point, as illustrated in Fig.2. The ne
 
 
 #### (1-1-2) Content
+
+<html>
+<body>
+    <table>
+        <tr>
+            <td>(1) Frames (PNG files) are available in <a href="https://www.microsoft.com/en-us/research/project/rgb-d-dataset-7-scenes/"> Microsoft 7 Scenes Frames Dataset </td>
+        </tr>
+        <tr>
+            <td>(2) Generated MP4 Video Files with differnt Resolution and Frame Rate are available in <a href = "https://kaggle.com/datasets/a906acd0ce4c8ee03048bf10c06573547ddca5a5c775ba592306bd04038f3a56"> MP4 Files </a> </td>
+        </tr>
+        <tr>
+            <td>(3) Network Traffic PCAP Collected are available in <a href = "https://kaggle.com/datasets/a906acd0ce4c8ee03048bf10c06573547ddca5a5c775ba592306bd04038f3a56"> PCAP1 & PCAP2 </a> </td>
+        </tr>
+        <tr>
+            <td>(4) CSV Files Extracted the Features are avaialble here </td>
+        </tr>
+    </table>
+</body>
+</html>
 
 Three different types of files are available for those working on AR network traffic research.
 
@@ -151,6 +170,19 @@ This tool uses the set of frmaes (in png format) to generate video in specific f
 **Output:**
 
 ![image](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/21206801/dbf7b664-52af-4d19-816d-5f155fb9058a)
+
+##### (1-1-4-4) Collect the Network Traffic
+
+      #sudo apt update
+  
+      #sudo apt install tshark
+  
+      #ip addr
+  
+      #sudo tshark -i eth0 -w capture.pcap
+  
+      #tshark -i 4 -a duration:180 -w "E:\Postdoc_UFScar\MyARCode\Codes\Ver2.01_202401\Simulation tools\myfile.pcap"
+
 
 
 ## (2) CG traffic collection
