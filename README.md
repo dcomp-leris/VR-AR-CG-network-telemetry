@@ -81,14 +81,15 @@ Two computers are connected via an access point, as illustrated in Fig.2. The ne
             <td>(1) Frames (PNG files) are available in <a href="https://www.microsoft.com/en-us/research/project/rgb-d-dataset-7-scenes/"> Microsoft 7 Scenes Frames Dataset </td>
         </tr>
         <tr>
-            <td>(2) Generated MP4 Video Files with differnt Resolution and Frame Rate are available in <a href = "https://kaggle.com/datasets/a906acd0ce4c8ee03048bf10c06573547ddca5a5c775ba592306bd04038f3a56"> MP4 Files </a> </td>
+            <td>(2) Generated MP4 Video Files with different Resolution and Frame Rate are available in <a href = "https://kaggle.com/datasets/a906acd0ce4c8ee03048bf10c06573547ddca5a5c775ba592306bd04038f3a56"> MP4 Files </a> </td>
         </tr>
         <tr>
             <td>(3) Network Traffic PCAP Collected are available in <a href = "https://kaggle.com/datasets/a906acd0ce4c8ee03048bf10c06573547ddca5a5c775ba592306bd04038f3a56"> PCAP1 & PCAP2 </a> </td>
         </tr>
         <tr>
-            <td>(4) CSV Files Extracted the Features are avaialble here </td>
+            <td>(4) CSV Files Extracted the Features are available here <a href = "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/tree/main/AR%20dataset/Experiment1/PCAP1"> PCAP1 CSV Files </a> | <a href = "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/tree/main/AR%20dataset/Experiment1/PCAP2"> PCAP2 CSV Files </a> </td>
         </tr>
+              <td>(5) CSV Files Extracted the Features From Statistical Model <a href = "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/tree/main/AR%20dataset/Experiment1/Statistical%20Features"></a> Statistical Generated CSV Files</td>
     </table>
 </body>
 </html>
