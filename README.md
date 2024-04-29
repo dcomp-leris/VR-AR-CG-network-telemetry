@@ -4,7 +4,7 @@ In this repository, collected network traffic datasets regarding Virtual Reality
 
 
 ## (1) AR traffic collection   
-In this experiment, we use streaming the video to simulate the AR glasses Uplink (UL) & Downlink (DL) based on the off-the-shelf glasses! All datasets are in CSV format and either were generated statistically or extracted from the collected PCAP.
+In this experiment, we use video streaming to simulate the AR glasses Uplink (UL) & Downlink (DL) based on the off-the-shelf glasses! All datasets are in CSV format (1- generated statistically or 2- extracted from the collected PCAP).
 
 <div align="left">
   <img src="Meta3.png">
