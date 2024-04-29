@@ -67,7 +67,7 @@ Two computers are connected via an access point, as illustrated in Fig.2. The ne
             <td>(3) Stream the Video from the system simulating the edge server to the system simulating AR Glasses as the Downlink (Specific resolution, frame rate, and bitrate) [GStreamer is used to stream the Video such as step 2]<a href = "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#1-1-4-3-install-gst-launch-for-video-streaming-xr-system"> Install GStreamer </a> | <a href = "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/edit/main/README.md#1-1-4-4-stream-the-video-with-specific-resolution-frame-rate-encoding-and-bitrate-xr-system"> Stream the Video </a> </td>
         </tr>
         <tr>
-            <td>(4) Collect the network traffic using Tshark installed in the edge server (for Uplinik) and installed in AR Glasses (of course simulated Glasses!) (for Downlink)</td>
+            <td>(4) Collect the network traffic using Tshark installed in the edge server (for Uplinik) and installed in AR Glasses (of course simulated Glasses!) <a href = "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#1-1-6-5-install-the-tshark-xr_system--edge-server"> Install Tshark </a> | <a href = "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#1-1-6-6-check-the-nic-name--collect-the-pcap-xr_system--edge-server"> Run the Tshark </a></td>
         </tr>
     </table>
 </body>
@@ -131,7 +131,7 @@ In this experiment, we have two computer systems whose OS are **Linux ubuntu 22.
 ***Follow the instructions to generate the video and stream ...***
 
 ##### (1-1-6-1) Install FFmpeg [XR system]! [https://ffmpeg.org/]  
-This tool uses the set of frmaes (in png format) to generate video in specific frame rate and resolution!
+This tool uses a set of frames (in PNG format) to generate video in specific frame rate and resolution!
 
     # sudo apt-get update && sudo apt-get dist-upgrade
   
