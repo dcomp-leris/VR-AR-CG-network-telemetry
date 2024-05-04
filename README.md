@@ -282,3 +282,128 @@ For each PCAP file, we extracted features and created CSV files with it. Feature
 - ***FS***: The size of the frame transmitted over the network.
 - ***IFI***: The interval between two consecutive frames.
 
+
+### (2-4) Dataset Structure
+
+Below is the structure of the CG dataset. 
+
+It is organized by the following order: Network connection > Game > Number of players > Data type > Files
+
+```
+├───5G connection
+│   ├───Fortnite
+│   │   ├───1 Player
+│   │   │   ├───Features
+│   │   │   │       ex35.csv
+│   │   │   │
+│   │   │   └───INT data
+│   │   │           Ex35.csv
+│   │   │
+│   │   └───2 Players
+│   │       ├───Features
+│   │       │       ex39.csv
+│   │       │
+│   │       └───INT data
+│   │               Ex39.csv
+│   │
+│   ├───Forza Horizon 5
+│   │   ├───1 Player
+│   │   │   ├───Features
+│   │   │   │       ex37.csv
+│   │   │   │
+│   │   │   └───INT data
+│   │   │           Ex37.csv
+│   │   │
+│   │   └───2 Players
+│   │       ├───Features
+│   │       │       ex40.csv
+│   │       │
+│   │       └───INT data
+│   │               Ex40.csv
+│   │
+│   └───Mortal Kombat 11
+│       └───1 Player
+│           ├───Features
+│           │       ex38.csv
+│           │
+│           └───INT data
+│                   Ex38.csv
+│
+└───Wired connection
+    ├───Fortnite
+    │   ├───1 Player
+    │   │   ├───Features
+    │   │   │       ex20.csv
+    │   │   │       ex7.csv
+    │   │   │
+    │   │   └───INT data
+    │   │           Ex19.csv
+    │   │           Ex20.csv
+    │   │           Ex31.csv
+    │   │           Ex7.csv
+    │   │
+    │   └───2 Players
+    │       ├───Features
+    │       │       ex21.csv
+    │       │       ex22.csv
+    │       │       ex23.csv
+    │       │
+    │       └───INT data
+    │               Ex21.csv
+    │               Ex22.csv
+    │               Ex23.csv
+    │
+    ├───Forza Horizon 5
+    │   ├───1 Player
+    │   │   ├───Features
+    │   │   │       ex10.csv
+    │   │   │       ex11.csv
+    │   │   │       ex29.csv
+    │   │   │       ex8.csv
+    │   │   │
+    │   │   └───INT data
+    │   │           Ex10.csv
+    │   │           Ex11.csv
+    │   │           Ex29.csv
+    │   │           Ex8.csv
+    │   │           Ex9.csv
+    │   │
+    │   └───2 Players
+    │       ├───Features
+    │       │       ex15.csv
+    │       │       ex16.csv
+    │       │       ex17.csv
+    │       │
+    │       └───INT data
+    │               Ex15.csv
+    │               Ex18.csv
+    │
+    └───Mortal Kombat 11
+        ├───1 Player
+        │   ├───Features
+        │   │       ex12.csv
+        │   │       ex13.csv
+        │   │       ex14.csv
+        │   │       ex24.csv
+        │   │       ex25.csv
+        │   │       ex30.csv
+        │   │
+        │   └───INT data
+        │           Ex12.csv
+        │           Ex13.csv
+        │           Ex14.csv
+        │           Ex24.csv
+        │           Ex25.csv
+        │           Ex30.csv
+        │
+        └───2 Players
+            ├───Features
+            │       ex32.csv
+            │       ex33.csv
+            │       ex34.csv
+            │
+            └───INT data
+                    Ex32.csv
+                    Ex33.csv
+                    Ex34.csv
+```
