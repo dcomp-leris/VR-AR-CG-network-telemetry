@@ -330,6 +330,7 @@ It is organized by the following order: Network connection > Game > Number of pl
     ├───Fortnite
     │   ├───1 Player
     │   │   ├───Features
+    │   │   │       ex19.csv
     │   │   │       ex20.csv
     │   │   │       ex7.csv
     │   │   │
@@ -373,6 +374,8 @@ It is organized by the following order: Network connection > Game > Number of pl
     │       │
     │       └───INT data
     │               Ex15.csv
+    │               Ex16.csv
+    │               Ex17.csv
     │               Ex18.csv
     │
     └───Mortal Kombat 11
