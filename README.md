@@ -11,15 +11,12 @@ In this repository, collected network traffic datasets regarding Virtual Reality
 ## (1) AR traffic collection   
 In this experiment, we use video streaming to simulate the AR glasses Uplink (UL) & Downlink (DL) based on the off-the-shelf glasses! All datasets are in CSV format (1- generated statistically or 2- extracted from the collected PCAP).
 
+<!--
 <div align="left">
   <img src="Meta3.png">
    <img src="Xreal.png">
 </div>
-
-<div align="right">
-  <img src="Xreal.png">
-</div>
-
+-->
 
 ### (1-1) Experiment1 - (Mimicking VR/AR Glasses!)
 
@@ -240,10 +237,10 @@ Our host is one of the laptops, and it runs two Python programs. The first one i
 
 To connect and play Xbox CG we use 2 laptops (laptop_1 in all experiments and laptop_2 in 2 players experiments). These are some important specs about they:
 
-- **OS**: Windows 10 / Windows 11
-- **Browser to play**: Google Chrome
+- **OS**: Windows 10 (laptop_1) / Windows 11 (laptop_2)
+- **Browser to play**: Google Chrome (laptop_1) / Microsoft Edge (laptop_2)
 - **Frame Rate**: 60 FPS
-- **Screen Resolution**: 1366x768 / 1920x1080
+- **Screen Resolution**: 1366x768 (laptop_1) / 1920x1080 (laptop_2)
 
 #### (2-2-4) Network setup
 
