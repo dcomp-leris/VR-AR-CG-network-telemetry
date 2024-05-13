@@ -118,9 +118,9 @@ Two computers are connected via an access point, as illustrated in Fig.2. The ne
             <td>(3) Network Traffic PCAP Collected are available in <a href = "https://kaggle.com/datasets/a906acd0ce4c8ee03048bf10c06573547ddca5a5c775ba592306bd04038f3a56"> PCAP1 & PCAP2 </a> </td>
         </tr>
         <tr>
-            <td>(4) CSV Files Extracted the Features are available here <a href = "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/tree/main/AR%20dataset/Experiment1/PCAP1"> PCAP1 CSV Files </a> | <a href = "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/tree/main/AR%20dataset/Experiment1/PCAP2"> PCAP2 CSV Files </a> </td>
+            <td>(4) CSV Files Extracted the Features are available here <a href = "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/tree/main/AR%20dataset/Experiment1/PCAP1"> PCAP1 CSV Files | </a> | <a href = "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/tree/main/AR%20dataset/Experiment1/PCAP2"> PCAP2 CSV Files </a> </td>
         </tr>
-              <td>(5) CSV Files Extracted the Features From Statistical Model <a href = "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/tree/main/AR%20dataset/Experiment1/Statistical%20Features"></a> Statistical Generated CSV Files</td>
+              <td>(5) CSV Files Extracted the Features From Statistical Model <a href = "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/tree/main/AR%20dataset/Experiment1/Statistical%20Features"> Statistical Generated CSV Files </a> </td>
     </table>
 </body>
 </html>
@@ -154,12 +154,12 @@ Features are defined as below:
 
 #### (1-1-6) Install the Tools and Execute The Instructions 
 
-In this experiment, we have two computer systems whose OS are **Linux ubuntu 22.04 LTS**. The computer which generates the stream as the XR (VR or AR) glasses will be called **XR system** and the computer simulated edge server is called **edge server**. To execute the commands, the name of the [XR or edge] system will be mentioned!
+In this experiment, we have two computer systems whose OS are **Linux ubuntu 22.04 LTS**. The computer that generates the stream as the XR (VR or AR) glasses will be called **XR system** and the computer-simulated edge server is called **edge server**. To execute the commands, the name of the [XR or edge] system will be mentioned!
 
 ***Follow the instructions to generate the video and stream ...***
 
 ##### (1-1-6-1) Install FFmpeg [XR system]! [https://ffmpeg.org/]  
-This tool uses a set of frames (in PNG format) to generate video in specific frame rate and resolution!
+This tool uses a set of frames (in PNG format) to generate video in a specific frame rate and resolution!
 
     # sudo apt-get update && sudo apt-get dist-upgrade
   
