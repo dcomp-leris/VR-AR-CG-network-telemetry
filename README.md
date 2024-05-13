@@ -66,9 +66,7 @@ Two computers are connected via an access point, as illustrated in Fig.2. The ne
 <table>
   <tr>
     <td> <img src="AR_Senario.png" alt="AR Network Traffic Scenario" width="600" height="250"></td>
-    <td><img src="Streaming_Features.png" alt="Streaming Features" width="400" height="200"></td>
-    <td><img src=" ![image](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/21206801/ecf407af-9a87-42a5-91d5-71833814d46a)
-" alt="Streaming Features" width="400" height="200"></td>
+    <td><img src="Resolution.png" alt="Streaming Features" width="400" height="200"></td>
    
   </tr>
   <tr>
