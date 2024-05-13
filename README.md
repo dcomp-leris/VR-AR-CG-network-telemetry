@@ -24,7 +24,7 @@ In this dataset, we wanted to collect the network traffic of the Augmented Reali
 <sub>Fig.(1) AR using the VR glasses with passthrough capability such as Meta Quest (2 or 3) </sub>
 </p>
 
-In this experiment, the videos are streamed on the Wireless network with the topology, as shown in Fig.2, and network traffic is collected with Tshark in PCAP format. This dataset is collected in 3459 sec (~57min and 39sec). 
+In this experiment, the videos are streamed on the Wireless network with the topology, as shown in Fig.(2-1), and network traffic is collected with Tshark in PCAP format. This dataset is collected in 3459 sec (~57min and 39sec). 
 The experiment is repeated two times (PCAP1 and PCAP2), so the collected PCAP files are available in PCAP1 and PCAP2 folders. All required tools and data for reproducing the experiment with different configurations are available in this repository in addition to the collected and generated CSV files. The available CSV datasets of experiment1 are organized in three sections:
 
     (1) PCAP1 --> Extracted the value of the feature from the collected PCAP files.
@@ -60,7 +60,7 @@ To access other required tools, files, and datasets, follow the AR subsections b
 
 #### (1-1-1) Topology & Configuration
 
-Two computers are connected via an access point, as illustrated in Fig.2. The network traffic collected at the edge server is referred to as Uplink traffic. Subsequently, video streaming, characterized by a specific resolution and frame rate with constant encoding bitrate (20-35 Mbps), is generated and designated as Downlink traffic, as depicted in Fig.3. 
+Two computers are connected via an access point, as illustrated in Fig.(2-1). The network traffic collected at the edge server is referred to as Uplink traffic. Subsequently, video streaming, characterized by a specific resolution and frame rate with constant encoding bitrate (20-35 Mbps), is generated and designated as Downlink traffic, as depicted in Fig.(2-2). 
 
 
 <table>
