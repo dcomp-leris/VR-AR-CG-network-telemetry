@@ -3,7 +3,7 @@
 <!--![leris](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/58492556/67a96a00-c791-46b3-afac-daf3ae212aeb)-->
 <!Version 1.00 is ready for internal evaluation>
 
-# VR-AR-CG-Network Telemetry 
+# VR-AR-CG Network Traffic Dataset 
 In this repository, collected network traffic datasets regarding Virtual Reality (VR), Augmented Reality (AR), and Cloud Gaming (CG), are shared publicly. 
 
 
@@ -226,7 +226,7 @@ This tool uses a set of frames (in PNG format) to generate video in a specific f
 
 ## (2) CG traffic collection
 
-To collect Cloug Gaming network telemtry data, we use a gadget between the CG server and clients (players). This gadget, called Raspberry Pi (having P4Pi system installed), runs a virtual switch and it can collect InBand Network Telemetry data and Packet Captures.
+To collect Cloug Gaming network telemtry data, we use a device between the CG server and clients (players). This device, called Raspberry Pi (having P4Pi system installed), runs a virtual switch and it can collect InBand Network Telemetry data and Packet Captures.
 
 In the moment we are using only Xbox Cloud Gaming server in our experiments.
 
@@ -244,13 +244,15 @@ Our setup is based in Raspberry Pi (Model 4), and one or two laptops.
 
 #### (2-2-1) Raspberry Pi setting
 
-For Raspberry Pi we installed P4Pi system, a platform that allows to design and deploy network data planes written in P4 language using this gadget. You can know more about and find tutorials about how to install and manage it [here](https://github.com/p4lang/p4pi/wiki). P4Pi runs a virtual switch, and you can choose two different targets, T4P4S and BMv2. We use **BMv2**. After setting it, we created and deployed in BMv2 a P4 program able to parse our INT header in a packet, save all INT data in it, and then deparse the header and send the packet back to our host. To finish Raspberry Pi configuration, we set the rate that the queues process packets:
+For Raspberry Pi we installed P4Pi system, a platform that allows to design and deploy network data planes written in P4 language using this device. You can know more about and find tutorials about how to install and manage it [here](https://github.com/p4lang/p4pi/wiki). P4Pi runs a virtual switch, and you can choose two different targets, T4P4S and BMv2. We use **BMv2**. After setting it, we created and deployed in BMv2 a P4 program able to parse our INT header in a packet, save all INT data in it, and then deparse the header and send the packet back to our host. To finish Raspberry Pi configuration, we set the rate that the queues process packets:
 
     # sudo simple_switch_CLI
     # set_queue_rate 2000
 
 For the experiments until now, we use value 2000 (packets processes by second). To collect pcap of the experiments, we use **tshark** in the Raspberry Pi:
 
+    # sudo apt update
+    # sudp apt install tshark
     # sudo tshark -a duration:900 exX.pcap
 
 We set time limit in 15 min (900 seconds) for our experiments.
@@ -274,7 +276,14 @@ The host laptop (+ the second one just for playing) connects by Wi-Fi/wireless c
 
 The following figure represents our described setup:
 
-![image](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/58492556/68a6c851-8863-43cd-aa0b-abb75a128d56)
+<div align="center">
+  <img src="https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/58492556/68a6c851-8863-43cd-aa0b-abb75a128d56" width="80%" height="80%">
+</div>
+
+<p align="center">
+<sub>Fig.(4) CG experiments setup </sub>
+</p>
+<!--![image](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/58492556/68a6c851-8863-43cd-aa0b-abb75a128d56)-->
 
 ### (2-3) Data description
 
@@ -301,9 +310,19 @@ For each experiment we have a PCAP file of the trace collected in Raspberry Pi i
 
 For each PCAP file, we extracted features and created CSV files with it. Features are:
 
-- ***IPI***: The difference between the arrival times of two consecutive packets.
-- ***FS***: The size of the frame transmitted over the network.
-- ***IFI***: The interval between two consecutive frames.
+- **ID:** The unique Flow identity
+- **SrcIP:** Flow Source IP
+- **DstIP:** Flow Destination IP 
+- **IPVersion:** IPv4 or IPv6
+- **Protocol:** UDP/TCP
+- **PS:** Packet Size in Byte
+- **IPI:** Inter Packet Interval between two consecutive frames
+- **FlowSizeBytes:** Flow Size in Byte
+- **FlowSizePackets:** Flow Size in Number of Packets
+- **FS:** Frame Size in Byte
+- **FS(PKT):** Frame Size in Number of Packets
+- **NumFrames:** Number of Frames in each Flow
+- **IFI:** Inter Frame Interval between two consecutive frames 
 
 
 ### (2-4) Dataset Structure
