@@ -55,14 +55,12 @@ To use the AR datasets, the tree map of the AR datasets folder and files are sho
             ├── DL.csv
             └── UL.csv
 
-To access other required tools, files, and datasets, follow the AR subsections as below:   
-
+To access other required tools, files, and datasets, follow the AR subsections below:   
 
 
 #### (1-1-1) Topology & Configuration
 
 Two computers are connected via an access point, as illustrated in Fig.2. The network traffic collected at the edge server is referred to as Uplink traffic. Subsequently, video streaming, characterized by a specific resolution and frame rate with constant encoding bitrate (20-35 Mbps), is generated and designated as Downlink traffic, as depicted in Fig.3. 
-
 
 
 <table>
@@ -80,10 +78,8 @@ Two computers are connected via an access point, as illustrated in Fig.2. The ne
 </p>
 
 
-To run the experiment
 
-
-#### (1-1-2) Run the Experiment Step by Step
+#### (1-1-2) Phases to reproduce the (Experiment 1)
 
 <html>
 <body>
