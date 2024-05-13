@@ -9,14 +9,8 @@ In this repository, collected network traffic datasets regarding Virtual Reality
 
 
 ## (1) AR traffic collection   
-In this experiment, we use video streaming to simulate the AR glasses Uplink (UL) & Downlink (DL) based on the off-the-shelf glasses! All datasets are in CSV format (1- generated statistically or 2- extracted from the collected PCAP).
+In this experiment, we use video streaming to simulate the AR glasses Uplink (UL) & Downlink (DL) based on the off-the-shelf glasses! All datasets are in CSV format. The AR datasets are organized into two key parts (1) Extracted from the PCAP files, and (2) Statistically generated Features' value. 
 
-<!--
-<div align="left">
-  <img src="Meta3.png">
-   <img src="Xreal.png">
-</div>
--->
 
 ### (1-1) Experiment1 - (Mimicking VR/AR Glasses!)
 
@@ -30,28 +24,64 @@ In this dataset, we wanted to collect the network traffic of the Augmented Reali
 <sub>Fig.(1) AR using the VR glasses with passthrough capability such as Meta Quest (2 or 3) </sub>
 </p>
 
-In this experiment, the videos are streamed on the Wireless network with the topology, as shown in Fig.2, and network traffic is collected with Tshark in PCAP format. This dataset is collected in 3459 sec (~57min and 39sec). The experiment is repeated two times, so the collected PCAP files are available in PCAP1 and PCAP2 folders. All required tools and data for repeating the experiment with different configurations are available in this repository in addition to the collected and generated CSV files.
+In this experiment, the videos are streamed on the Wireless network with the topology, as shown in Fig.2, and network traffic is collected with Tshark in PCAP format. This dataset is collected in 3459 sec (~57min and 39sec). 
+The experiment is repeated two times (PCAP1 and PCAP2), so the collected PCAP files are available in PCAP1 and PCAP2 folders. All required tools and data for reproducing the experiment with different configurations are available in this repository in addition to the collected and generated CSV files. The available CSV datasets of experiment1 are organized in three sections:
+
+    (1) PCAP1 --> Extracted the value of the feature from the collected PCAP files.
+
+    (2) PCAP2 --> Extracted the value of the feature from the collected PCAP files.
+
+    (3) generated statistically --> generate the value of the features statistically!
+
+To use the AR datasets, the tree map of the AR datasets folder and files are shown below:
+
+    └── Experiment1
+        ├── PCAP1
+        │   ├── DS3_Myfile_1280_480_60.csv
+        │   ├── DS3_Myfile_1440_936_60.csv
+        │   ├── DS3_Myfile_1832_1920_120.csv
+        │   ├── DS3_Myfile_1920_1080_90.csv
+        │   ├── DS3_Myfile_2064_2208_90.csv
+        │   ├── DS3_Myfile_3840_1920_60.csv
+        │   └── DS3_Myfile_3840_1920_90.csv
+        ├── PCAP2
+        │   ├── Myfile_1280_480_60.csv
+        │   ├── Myfile_1440_936_60.csv
+        │   ├── Myfile_1832_1920_120.csv
+        │   ├── Myfile_1920_1080_90.csv
+        │   └── Myfile_2064_2208_90.csv
+        └── Statistical Features
+            ├── AR.csv
+            ├── DL.csv
+            └── UL.csv
+
+To access other required tools, files, and datasets, follow the AR subsections as below:   
+
 
 
 #### (1-1-1) Topology & Configuration
 
 Two computers are connected via an access point, as illustrated in Fig.2. The network traffic collected at the edge server is referred to as Uplink traffic. Subsequently, video streaming, characterized by a specific resolution and frame rate with constant encoding bitrate (20-35 Mbps), is generated and designated as Downlink traffic, as depicted in Fig.3. 
 
-<div align="center">
-  <img src="AR_Senario.png">
-</div>
+
+
+<table>
+  <tr>
+    <td> <img src="AR_Senario.png" alt="AR Network Traffic Scenario" width="600" height="250"></td>
+    <td><img src="Streaming_Features.png" alt="Streaming Features" width="400" height="200"></td>
+  </tr>
+  <tr>
+    <td> Fig.(2-1). Topology of the AR Network Traffic</td>
+    <td>Fig.(2-2). Streams Resolution & Frame Rate</td>
+  </tr>
+</table>
 <p align="center">
-<sub>Fig.(2). Topology of the AR Network Traffic</sub>
+  <sub>Fig.(2). Topology and Video Streaming Specs</sub>
 </p>
 
 
+To run the experiment
 
-<div align="center">
-  <img src="Streaming_Features.png">
-</div>
-<p align="center">
-<sub>Fig(3). Streams Resolution & Frame Rate</sub>
-</p>
 
 #### (1-1-2) Run the Experiment Step by Step
 
