@@ -1,7 +1,7 @@
 <img src="https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/58492556/67a96a00-c791-46b3-afac-daf3ae212aeb" alt="Leris logo" width="10%" height="10%" />
 
 <!--![leris](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/58492556/67a96a00-c791-46b3-afac-daf3ae212aeb)-->
-
+<!Version 1.00 is ready for internal evaluation>
 
 # VR-AR-CG-Network Telemetry 
 In this repository, collected network traffic datasets regarding Virtual Reality (VR), Augmented Reality (AR), and Cloud Gaming (CG), are shared publicly. 
