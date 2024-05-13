@@ -3,7 +3,7 @@
 <!--![leris](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/58492556/67a96a00-c791-46b3-afac-daf3ae212aeb)-->
 <!Version 1.00 is ready for internal evaluation>
 
-# VR-AR-CG Network Traffic Dataset 
+# VR-AR-CG Network Traffic Datasets 
 In this repository, collected network traffic datasets regarding Virtual Reality (VR), Augmented Reality (AR), and Cloud Gaming (CG), are shared publicly. 
 
 
@@ -67,6 +67,9 @@ Two computers are connected via an access point, as illustrated in Fig.2. The ne
   <tr>
     <td> <img src="AR_Senario.png" alt="AR Network Traffic Scenario" width="600" height="250"></td>
     <td><img src="Streaming_Features.png" alt="Streaming Features" width="400" height="200"></td>
+    <td><img src=" ![image](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/21206801/ecf407af-9a87-42a5-91d5-71833814d46a)
+" alt="Streaming Features" width="400" height="200"></td>
+   
   </tr>
   <tr>
     <td> Fig.(2-1). Topology of the AR Network Traffic</td>
