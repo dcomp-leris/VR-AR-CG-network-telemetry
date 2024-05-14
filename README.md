@@ -1,9 +1,10 @@
 
 
-<div style="display: flex; justify-content: space-between;">
-  <img src="https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/58492556/67a96a00-c791-46b3-afac-daf3ae212aeb" alt="Leris logo" width="10%" height="10%" />
-  <img src="https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/58492556/b26a6be8-6b16-4542-bb3e-7eeac34644d6" alt="Leris logo" width="10%" height="10%" />
+<div>
+  <img src="https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/58492556/67a96a00-c791-46b3-afac-daf3ae212aeb" alt="Leris logo" align="left" style="width: 10%; height: 10%;" />
+  <img src="https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/58492556/b26a6be8-6b16-4542-bb3e-7eeac34644d6" alt="Smartness logo" align="right"style="width: 12%; height: 12%;" />
 </div>
+<br><br><br><br>
 
 
 
