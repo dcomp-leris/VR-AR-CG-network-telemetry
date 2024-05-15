@@ -64,7 +64,7 @@ To use the AR datasets, the tree map of the AR datasets folder and files are sho
             ├── DL.csv
             └── UL.csv
 
-To access other required tools, files, and datasets, follow the AR subsections below:   
+To access other required tools, files, and datasets, follow the AR subsections below   
 
 
 #### (1-1-1) Topology & Configuration
