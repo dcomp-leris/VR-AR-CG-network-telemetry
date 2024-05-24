@@ -152,12 +152,12 @@ Features are defined as below:
 - **DstIP:** Flow Destination IP 
 - **IPVersion:** IPv4 or IPv6
 - **Protocol:** UDP/TCP
-- **PS:** Packet Size in Byte
-- **IPI:** Inter Packet Interval between two consecutive frames
+- **PS:** Packet Size in Byte Unit
+- **IPI:** Inter Packet Interval between two consecutive packets
 - **FlowSizeBytes:** Flow Size in Byte
-- **FlowSizePackets:** Flow Size in Number of Packets
-- **FS:** Frame Size in Byte
-- **FS(PKT):** Frame Size in Number of Packets
+- **FlowSizePackets:** Flow Size in Number of Packets Unit
+- **FS:** Frame Size in Byte Unit
+- **FS(PKT):** Frame Size in Number of Packets Unit
 - **NumFrames:** Number of Frames in each Flow
 - **IFI:** Inter Frame Interval between two consecutive frames 
 
