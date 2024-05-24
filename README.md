@@ -90,7 +90,7 @@ Two computers are connected via an access point, as illustrated in Fig.(2-1). Th
 
 
 #### (1-1-2) Phases to Reproduce the (Experiment 1)
-
+IPI: Inter Packet Interval between two consecutive frames
 <html>
 <body>
     <table>
@@ -147,19 +147,19 @@ Two computers are connected via an access point, as illustrated in Fig.(2-1). Th
 #### (1-1-5) Dataset Features Description
 Features are defined as below:
 
-- **ID:** The unique Flow identity
+- **ID:** The Unique Flow Identity
 - **SrcIP:** Flow Source IP
 - **DstIP:** Flow Destination IP 
 - **IPVersion:** IPv4 or IPv6
 - **Protocol:** UDP/TCP
-- **PS:** Packet Size in Byte Unit
-- **IPI:** Inter Packet Interval between two consecutive packets
+- **PS:** Packet Size in Byte unit
+- **IPI:** Inter Packet Interval between two Consecutive Packets
 - **FlowSizeBytes:** Flow Size in Byte
-- **FlowSizePackets:** Flow Size in Number of Packets Unit
-- **FS:** Frame Size in Byte Unit
-- **FS(PKT):** Frame Size in Number of Packets Unit
+- **FlowSizePackets:** Flow Size in Number of Packets unit
+- **FS:** Frame Size in Byte unit
+- **FS(PKT):** Frame Size in Number of Packets unit
 - **NumFrames:** Number of Frames in each Flow
-- **IFI:** Inter Frame Interval between two consecutive frames 
+- **IFI:** Inter Frame Interval between two Consecutive Frames 
 
 
 #### (1-1-6) How to Install the Tools & How to Execute the Instructions?
