@@ -109,7 +109,7 @@ IPI: Inter Packet Interval between two consecutive frames
             <td>(3) Stream the Video from the system simulating the edge server to the system simulating AR Glasses as the Downlink (Specific resolution, frame rate, and bitrate) [GStreamer is used to stream the Video such as step 2]<a href = "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#3-3-install-gstreamer-gst-launch-for-video-streaming-xr-system"> Install GStreamer </a> | <a href = "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#3-4-stream-the-video-using-gstreamer-with-specific-resolution-frame-rate-encoding-and-bitrate-xr-system"> Stream the Video </a> </td>
         </tr>
         <tr>
-            <td>(4) Collect the network traffic using Tshark installed in the edge server (for Uplinik) and installed in AR Glasses (of course simulated Glasses!) <a href = "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#3-5-install-the-tshark-xr_system--edge-server"> Install Tshark </a> | <a href = "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#1-1-6-6-check-the-nic-name--collect-the-pcap-xr_system--edge-server"> Run the Tshark </a></td>
+            <td>(4) Collect the network traffic using Tshark installed in the edge server (for Uplinik) and installed in AR Glasses (of course simulated Glasses!) <a href = "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#3-5-install-the-tshark-xr_system--edge-server"> Install Tshark </a> | <a href = "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#3-6-run-tshark-to-collect-the-pcap-xr_system--edge-server"> Run the Tshark </a></td>
         </tr>
     </table>
 </body>
