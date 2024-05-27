@@ -106,10 +106,10 @@ IPI: Inter Packet Interval between two consecutive frames
             <td>(2) Stream the Video from the system simulating the AR Glasses to the system simulating edge server as the Uplink (Specific resolution, frame rate, and bitrate)<a href = "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#3-3-install-gstreamer-gst-launch-for-video-streaming-xr-system"> Install GStreamer </a> | <a href = "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#3-4-stream-the-video-using-gstreamer-with-specific-resolution-frame-rate-encoding-and-bitrate-xr-system"> Stream the Video </a> </td>
         </tr>
         <tr>
-            <td>(3) Stream the Video from the system simulating the edge server to the system simulating AR Glasses as the Downlink (Specific resolution, frame rate, and bitrate) [GStreamer is used to stream the Video such as step 2]<a href = "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#1-1-6-3-install-gst-launch-for-video-streaming-xr-system"> Install GStreamer </a> | <a href = "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#1-1-6-4-stream-the-video-with-specific-resolution-frame-rate-encoding-and-bitrate-xr-system"> Stream the Video </a> </td>
+            <td>(3) Stream the Video from the system simulating the edge server to the system simulating AR Glasses as the Downlink (Specific resolution, frame rate, and bitrate) [GStreamer is used to stream the Video such as step 2]<a href = "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#3-3-install-gstreamer-gst-launch-for-video-streaming-xr-system"> Install GStreamer </a> | <a href = "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#3-4-stream-the-video-using-gstreamer-with-specific-resolution-frame-rate-encoding-and-bitrate-xr-system"> Stream the Video </a> </td>
         </tr>
         <tr>
-            <td>(4) Collect the network traffic using Tshark installed in the edge server (for Uplinik) and installed in AR Glasses (of course simulated Glasses!) <a href = "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#1-1-6-5-install-the-tshark-xr_system--edge-server"> Install Tshark </a> | <a href = "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#1-1-6-6-check-the-nic-name--collect-the-pcap-xr_system--edge-server"> Run the Tshark </a></td>
+            <td>(4) Collect the network traffic using Tshark installed in the edge server (for Uplinik) and installed in AR Glasses (of course simulated Glasses!) <a href = "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#3-5-install-the-tshark-xr_system--edge-server"> Install Tshark </a> | <a href = "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#1-1-6-6-check-the-nic-name--collect-the-pcap-xr_system--edge-server"> Run the Tshark </a></td>
         </tr>
     </table>
 </body>
@@ -463,11 +463,25 @@ This tool uses a set of frames (in PNG format) to generate video in a specific f
   
       $ sudo apt install tshark
 
-### (3-6) Check the NIC Name & Collect the PCAP [XR_System & Edge Server]
+### (3-6) Run Tshark To Collect the PCAP [XR_System & Edge Server]
+**Firstly**, extract the network interface name which needs to be sniffed!
      
       $ ip addr
+      
+  **output:**
   
-      $ sudo tshark -i eth0 -w capture.pcap
+ ![image](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/21206801/1f38e51d-14a4-4518-b8d8-5124d085449b)
+
+
+**Secondly**, run the Tshark to listen to the specific interface and set the address to store the pcap file!
+
+    
+      $ sudo tshark -i [Interface Name] -w [File Address] 
+
+- **[Interface Name]**: Extracted from the first command!
+- **[File Address]**: The address to which the pcap file should be stored!
+
+**For example**, we can run the following command in the Terminal to sniff interface number 4 (extracted from the first command!) for 180 sec and store it in the address "/home/myfile.pcap":
   
-      $ tshark -i 4 -a duration:180 -w "E:\Postdoc_UFScar\MyARCode\Codes\Ver2.01_202401\Simulation tools\myfile.pcap"
+      $ tshark -i 4 -a duration:180 -w "\home\myfile.pcap"
 
