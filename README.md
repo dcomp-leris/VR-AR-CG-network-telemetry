@@ -1,5 +1,3 @@
-
-
 <div>
   <img src="https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/58492556/67a96a00-c791-46b3-afac-daf3ae212aeb" alt="Leris logo" align="left" style="width: 10%; height: 10%;" />
   <img src="https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/58492556/b26a6be8-6b16-4542-bb3e-7eeac34644d6" alt="Smartness logo" align="right"style="width: 12%; height: 12%;" />
@@ -101,7 +99,7 @@ IPI: Inter Packet Interval between two consecutive frames
 <body>
     <table>
         <tr>
-            <td>(1) Generate the Video (.mp4) from the pre-collected environment frames (.PNG format) (Specific resolution, frame rate) <a href= "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/edit/main/README.md#3-1-install-ffmpeg-xr-system-httpsffmpegorg"> Install FFmpeg</a> | <a href="https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#1-1-6-2-generate-video-using-the-microsof-sequential-frames-xr-system">Generate Mp4</a>
+            <td>(1) Generate the Video (.mp4) from the pre-collected environment frames (.PNG format) (Specific resolution, frame rate) <a href= "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/?tab=readme-ov-file##3-1-install-ffmpeg-xr-system-httpsffmpegorg"> Install FFmpeg</a> | <a href="https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#1-1-6-2-generate-video-using-the-microsof-sequential-frames-xr-system">Generate Mp4</a>
  </td>
         </tr>
         <tr>
