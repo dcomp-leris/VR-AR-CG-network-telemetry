@@ -99,7 +99,7 @@ IPI: Inter Packet Interval between two consecutive frames
 <body>
     <table>
         <tr>
-            <td>(1) Generate the Video (.mp4) from the pre-collected environment frames (.PNG format) (Specific resolution, frame rate) <a href= "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/?tab=readme-ov-file##3-1-install-ffmpeg-xr-system-httpsffmpegorg"> Install FFmpeg</a> | <a href="https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#1-1-6-2-generate-video-using-the-microsof-sequential-frames-xr-system">Generate Mp4</a>
+            <td>(1) Generate the Video (.mp4) from the pre-collected environment frames (.PNG format) (Specific resolution, frame rate) <a href= "https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#3-1-install-ffmpeg-xr-system-httpsffmpegorg"> Install FFmpeg</a> | <a href="https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#1-1-6-2-generate-video-using-the-microsof-sequential-frames-xr-system">Generate Mp4</a>
  </td>
         </tr>
         <tr>
