@@ -14,7 +14,13 @@
 
 # VR-AR-CG Network Traffic Datasets 
 In this repository, collected network traffic datasets regarding Virtual Reality (VR), Augmented Reality (AR), and Cloud Gaming (CG), are shared publicly. 
+This repository is organized into three sections (1) AR, (2) CG, and (3) Setup Tools and Instructions. 
 
+  **(1) AR Network Traffic Collection:** This section is allocated to the experiments performed in the LERIS Lab to collect the Datasets regarding AR. The experiments are mentioned and elaborated in subsections (1-1), (1-2), etc.
+
+  **(2) CG Traffic Collection:** This section is dedicated to the experiments run in the LERIS Lab to collect the datasets regarding Cloud Gaming. The experiments are mentioned and elaborated in subsections (2-1), (2-2), etc. 
+
+  **(3) Install Tools & Run the Experiments:** The tools used in the experiments are presented in this section and show how to install and run them.
 
 
 ## (1) AR Network Traffic Collection   
@@ -169,7 +175,7 @@ In this experiment, we have two computer systems whose OS are **Linux ubuntu 22.
 
 
 
-## (2) CG traffic collection
+## (2) CG Traffic Collection
 
 To collect Cloug Gaming network telemtry data, we use a device between the CG server and clients (players). This device, called Raspberry Pi (having P4Pi system installed), runs a virtual switch and it can collect InBand Network Telemetry data and Packet Captures.
 
