@@ -161,76 +161,11 @@ Features are defined as below:
 - **NumFrames:** Number of Frames in each Flow
 - **IFI:** Inter Frame Interval between two Consecutive Frames 
 
-
-#### (1-1-6) How to Install the Tools & How to Execute the Instructions?
+#### (1-1-5) General Description for Experiment1 Setup
 
 In this experiment, we have two computer systems whose OS are **Linux ubuntu 22.04 LTS**. The computer that generates the stream as the XR (VR or AR) glasses will be called **XR system** and the computer-simulated edge server is called **edge server**. To execute the commands, the name of the [XR or edge] system will be mentioned!
 
-***Follow the instructions to generate the video and stream ...***
-
-##### (1-1-6-1) Install FFmpeg [XR system]! [https://ffmpeg.org/]  
-This tool uses a set of frames (in PNG format) to generate video in a specific frame rate and resolution!
-
-    # sudo apt-get update && sudo apt-get dist-upgrade
-  
-    # sudo apt-get install ffmpeg
-
-    # ffmpeg -version
-**Output:**
-![image](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/21206801/2eac8996-967f-4291-bd0d-842f2f5534c2)
-
-
-##### (1-1-6-2) Generate video using the Microsof sequential frames! [XR system]
-
-    # ffmpeg -r [frame rate] -f image2 -s [resolution] -i [sequence of png files] -vcodec libx264 -crf 25 -pix_fmt yuv420p [video name in mp4]
- 
- - ***[frame rate]*** -- > e.g. 30, 60, 90, 120 (fps)
- - ***[resolution]*** --> e.g. 1920x1080 
- - ***[sequence of png files]*** --> e.g. img%03d.png  (for the files with img001.png, img002.png, ... , img999.png)
- - ***[video name in mp4]*** --> e.g. my_video_1920_1080.mp4
- - ***libx264*** --> -vcodec libx264 is to set the encoding
-
-**For example:**
-![image](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/21206801/14b47fb2-f9df-4383-a5b0-27fe29d9a45d)
-**Output:**
-![image](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/21206801/834385dc-0b05-4c88-81ed-b97b81f7f4a3)
-
-##### (1-1-6-3) Install gst-launch for video streaming [XR system]
-[https://gstreamer.freedesktop.org/documentation/installing/on-linux.html?gi-language=c]
-
-    # sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio
-
-##### (1-1-6-4) Stream the video with specific resolution, frame rate, encoding and bitrate [XR system]**
-
-    # gst-launch-1.0 -v filesrc location=./video1080_30.mp4 ! decodebin ! videoconvert ! videoscale ! video/x-raw,width=1920,height=1080 ! videorate ! video/x-raw,framerate=60/1 ! x264enc tune=zerolatency bitrate=5000 ! rtph264pay config-interval=1 pt=96 ! udpsink host=[IP address] port=[Port#]
-    
-
-- ***[location=./video1080_30.mp4]*** --> location of the video
-- ***[width=1920,height=1080]***-->  resolution for streaming (This option can be neglected because it depends on the resolution of the video!)
-- ***[framerate=60/1]*** --> frame rate of the streaming (This option can be neglected because it depends on the frame rate of the video!)
-- ***[x264enc]*** --> The encoding which is H.264
-- ***[bitrate=5000]*** --> It is the bitrate of sampling! (More bitrate higher sampling and higher video quality!)
-- ***[rtph264pay]*** --> It is RTP protocol with H.264  encoding!
-- ***[IP address]*** --> the edge server IP address e.g. 192.168.10.2
-- ***[Port#]*** --> the port number e.g. 5000
-
-**Output:**
-
-![image](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/21206801/dbf7b664-52af-4d19-816d-5f155fb9058a)
-
-##### (1-1-6-5) Install the Tshark [XR_System & Edge Server]
-      
-      #sudo apt update
-  
-      #sudo apt install tshark
-
-##### (1-1-6-6) Check the NIC Name & Collect the PCAP [XR_System & Edge Server]
-     
-      #ip addr
-  
-      #sudo tshark -i eth0 -w capture.pcap
-  
-      #tshark -i 4 -a duration:180 -w "E:\Postdoc_UFScar\MyARCode\Codes\Ver2.01_202401\Simulation tools\myfile.pcap"
+***Follow the instructions to generate the video and stream in sections [1-1-2](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/edit/main/README.md#1-1-2-phases-to-reproduce-the-experiment-1)***
 
 
 
@@ -462,3 +397,73 @@ It is organized by the following order: Network connection > Game > Number of pl
                     Ex33.csv
                     Ex34.csv
 ```
+
+
+
+## (3) Install Tools & Run the Experiments    
+
+### (3-1) Install FFmpeg [XR system]! [https://ffmpeg.org/]  
+This tool uses a set of frames (in PNG format) to generate video in a specific frame rate and resolution!
+
+    $ sudo apt-get update && sudo apt-get dist-upgrade
+  
+    $ sudo apt-get install ffmpeg
+
+    $ ffmpeg -version
+    
+**Output:**
+![image](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/21206801/2eac8996-967f-4291-bd0d-842f2f5534c2)
+
+
+### (3-2) Generate Video using the Microsoft Sequential Frames! [XR system]
+
+    $ ffmpeg -r [frame rate] -f image2 -s [resolution] -i [sequence of png files] -vcodec libx264 -crf 25 -pix_fmt yuv420p [video name in mp4]
+ 
+ - ***[frame rate]*** -- > e.g. 30, 60, 90, 120 (fps)
+ - ***[resolution]*** --> e.g. 1920x1080 
+ - ***[sequence of png files]*** --> e.g. img%03d.png  (for the files with img001.png, img002.png, ... , img999.png)
+ - ***[video name in mp4]*** --> e.g. my_video_1920_1080.mp4
+ - ***libx264*** --> -vcodec libx264 is to set the encoding
+
+**For example:**
+![image](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/21206801/14b47fb2-f9df-4383-a5b0-27fe29d9a45d)
+**Output:**
+![image](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/21206801/834385dc-0b05-4c88-81ed-b97b81f7f4a3)
+
+### (3-3) Install GStreamer (gst-launch) for Video Streaming [XR system]
+[https://gstreamer.freedesktop.org/documentation/installing/on-linux.html?gi-language=c]
+
+    $ sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio
+
+### (3-4) Stream the Video (Using GStreamer) with Specific resolution, frame rate, encoding, and Bitrate [XR system]**
+
+    $ gst-launch-1.0 -v filesrc location=./video1080_30.mp4 ! decodebin ! videoconvert ! videoscale ! video/x-raw,width=1920,height=1080 ! videorate ! video/x-raw,framerate=60/1 ! x264enc tune=zerolatency bitrate=5000 ! rtph264pay config-interval=1 pt=96 ! udpsink host=[IP address] port=[Port#]
+    
+
+- ***[location=./video1080_30.mp4]*** --> location of the video
+- ***[width=1920,height=1080]***-->  resolution for streaming (This option can be neglected because it depends on the resolution of the video!)
+- ***[framerate=60/1]*** --> frame rate of the streaming (This option can be neglected because it depends on the frame rate of the video!)
+- ***[x264enc]*** --> The encoding which is H.264
+- ***[bitrate=5000]*** --> It is the bitrate of sampling! (More bitrate higher sampling and higher video quality!)
+- ***[rtph264pay]*** --> It is RTP protocol with H.264  encoding!
+- ***[IP address]*** --> the edge server IP address e.g. 192.168.10.2
+- ***[Port#]*** --> the port number e.g. 5000
+
+**Output:**
+
+![image](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/21206801/dbf7b664-52af-4d19-816d-5f155fb9058a)
+
+### (3-5) Install the Tshark [XR_System & Edge Server]
+      
+      $ sudo apt update
+  
+      $ sudo apt install tshark
+
+### (3-6) Check the NIC Name & Collect the PCAP [XR_System & Edge Server]
+     
+      $ ip addr
+  
+      $ sudo tshark -i eth0 -w capture.pcap
+  
+      $ tshark -i 4 -a duration:180 -w "E:\Postdoc_UFScar\MyARCode\Codes\Ver2.01_202401\Simulation tools\myfile.pcap"
+
