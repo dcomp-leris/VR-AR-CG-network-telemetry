@@ -195,14 +195,14 @@ Our setup is based in Raspberry Pi (Model 4), and one or two laptops.
 
 For Raspberry Pi we installed P4Pi system, a platform that allows to design and deploy network data planes written in P4 language using this device. You can know more about and find tutorials about how to install and manage it [here](https://github.com/p4lang/p4pi/wiki). P4Pi runs a virtual switch, and you can choose two different targets, T4P4S and BMv2. We use **BMv2**. After setting it, we created and deployed in BMv2 a P4 program able to parse our INT header in a packet, save all INT data in it, and then deparse the header and send the packet back to our host. To finish Raspberry Pi configuration, we set the rate that the queues process packets:
 
-    # sudo simple_switch_CLI
-    # set_queue_rate 2000
+    $ sudo simple_switch_CLI
+    $ set_queue_rate 2000
 
 For the experiments until now, we use value 2000 (packets processes by second). To collect pcap of the experiments, we use **tshark** in the Raspberry Pi:
 
-    # sudo apt update
-    # sudp apt install tshark
-    # sudo tshark -a duration:900 exX.pcap
+    $ sudo apt update
+    $ sudp apt install tshark
+    $ sudo tshark -a duration:900 exX.pcap
 
 We set time limit in 15 min (900 seconds) for our experiments.
 
