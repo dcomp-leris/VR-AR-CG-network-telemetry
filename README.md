@@ -498,7 +498,7 @@ After installing P4Pi, connect to it using SSH. You can see how to do this [here
 
 Connect your Raspberry Pi to your network by cable.
 
-#### (3-2-2) Enable BMv2
+#### (3-2-2) Enable BMv2 [Raspberry Pi]
 
 Enable BMv2 virtual switch:
 
@@ -506,7 +506,7 @@ Enable BMv2 virtual switch:
     sudo systemctl disable t4p4s.service
     sudo systemctl enable bmv2.service
 
-#### (3-2-3) Launch P4 program
+#### (3-2-3) Launch P4 program [Raspberry Pi]
 
 Firstly, let's add the script *[int.p4](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/blob/main/CG%20setup/int.p4)* to P4Pi:
 
@@ -528,8 +528,44 @@ Lastly, launch the program:
     echo 'int' > /root/t4p4s-switch
     systemctl restart bmv2.service
 
-#### (3-2-4) Install Tshark
+#### (3-2-4) Set switch queue rate [Raspberry Pi]
 
-    sudo apt update
-    sudo apt install tshark
+You can change the queue rate of the BMv2 switch, we setted it **2000** packets per second in our experiments:
 
+    sudo simple_switch_CLI
+    set_queue_rate 2000
+
+Enter *Ctrl + C* to exit the switch CLI.
+
+#### (3-2-5) Install & Run Tshark to Collect PCAP [Raspberry Pi]
+
+Follow [(3-1-5)](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/tree/cg-tools?tab=readme-ov-file#3-1-5-install-the-tshark-xr_system--edge-server)
+and [(3-1-6)](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/tree/cg-tools?tab=readme-ov-file#3-1-6-run-tshark-to-collect-the-pcap-xr_system--edge-server)
+sections!
+
+#### (3-2-6) Configure InfluxDB account and Database to save INT data
+
+Create a InfluxDB account and then create a database for save your INT data [here!](https://cloud2.influxdata.com/signup)
+
+#### (3-2-7) Run Client Scripts to Collect INT Data
+
+You need to have [Python 3](https://www.python.org/) installed on your client PC or notebook.
+
+Download *[send.py](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/blob/cg-tools/CG%20setup/send.py)* and *[receive.py](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/blob/cg-tools/CG%20setup/receive.py)* scripts. Then, run both in different terminals.
+
+Send:
+
+    cd [Scripts Folder]
+    python send.py
+
+Receive:
+
+    cd [Scripts Folder]
+    python receive.py [Experiment ID] [Duration in minutes]
+
+Obs: It's necessary to run Receive and Tshark at the same time!
+
+
+#### (3-2-8) Play Cloud Gaming
+
+Now you can open Xbox Cloud Gaming website and play a game to collect data.
