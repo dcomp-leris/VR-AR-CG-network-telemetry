@@ -195,18 +195,18 @@ Our setup is based in Raspberry Pi (Model 4), and one or two laptops.
 
 For Raspberry Pi we installed P4Pi system, a platform that allows to design and deploy network data planes written in P4 language using this device. P4Pi runs a virtual switch, and you can choose two different targets, T4P4S and BMv2. We use **BMv2**. After setting it, we created and deployed in BMv2 a P4 program able to parse our INT header in a packet, save all INT data in it, and then deparse the header and send the packet back to our host. To finish Raspberry Pi configuration, we set switch queue rate, and run Tshark to collect PCAP.
 
-- [Install P4Pi]()
-- [Enable BMv2]()
-- [Launch P4 program]()
-- [Set Switch Queue Rate]()
-- [Install & Run Tshark]()
+- [Install P4Pi](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#3-2-1-install-p4pi-in-raspberry-pi-and-access-through-wifissh)
+- [Enable BMv2](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#3-2-2-enable-bmv2-raspberry-pi)
+- [Launch P4 program](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#3-2-3-launch-p4-program-raspberry-pi)
+- [Set Switch Queue Rate](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#3-2-4-set-switch-queue-rate-raspberry-pi)
+- [Install & Run Tshark](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#3-2-5-install--run-tshark-to-collect-pcap-raspberry-pi)
 
 #### (2-2-2) INT Host laptop setting
 
 Our host is one of the laptops, and it runs two Python programs. The first one is responsible for creating INT packets (with INT header), and sending it to the host's network interface, one packet by second. The second program sniffs the network interface waiting for the INT packets, and, by each packet received, it get the fields that we need and save the values in our time series database. We are using [InfluxDB](https://www.influxdata.com/).
 
-- [Configure InfluxDB account and Database to save INT data]()
-- [Run Client Scripts to Collect INT Data]()
+- [Configure InfluxDB account and Database to save INT data](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#3-2-6-configure-influxdb-account-and-database-to-save-int-data)
+- [Run Client Scripts to Collect INT Data](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry?tab=readme-ov-file#3-2-7-run-client-scripts-to-collect-int-data)
 
 #### (2-2-3) CG Client specs
 
