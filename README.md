@@ -175,8 +175,8 @@ In this experiment, we have two computer systems whose OS are **Linux ubuntu 22.
 
 ## (2) CG Traffic Collection
 
-To collect Cloug Gaming network telemtry data, we use a device between the CG server and clients (players). This device, called Raspberry Pi (having P4Pi system installed), runs a virtual switch and it can collect InBand Network Telemetry data and Packet Captures.
-
+To collect Cloug Gaming network telemetry data, we use a device between the CG server and clients (players). This device, called Raspberry Pi (having P4Pi system installed), runs a virtual switch and it can collect InBand Network Telemetry data and Packet Captures.
+ 
 In the moment we are using only Xbox Cloud Gaming server in our experiments.
 
 ### (2-1) Experiments
@@ -185,7 +185,7 @@ In the moment we are using only Xbox Cloud Gaming server in our experiments.
 - We collected at the moment data about three diferent games, that are: Fortnite, Forza Horizon 5 and Mortal Kombat 11. 
 - For each one, we played in one or two players.
 
-We made different experiments switching those variables, and collected InBand Network Telemtry (INT) data, more especially the depth of the (virtual, emulated by Raspberry Pi) switch  queue of packets, and the timedelta that the packets stays in it. Beside that, we also collect pcap, using Raspberry Pi too.
+We made different experiments switching those variables, and collected InBand Network Telemetry (INT) data, more especially the depth of the (virtual, emulated by Raspberry Pi) switch queue of packets, and the timedelta that the packets stays in it. Beside that, we also collect pcap, using Raspberry Pi too.
 
 ### (2-2) Setup
 
@@ -193,22 +193,20 @@ Our setup is based in Raspberry Pi (Model 4), and one or two laptops.
 
 #### (2-2-1) Raspberry Pi setting
 
-For Raspberry Pi we installed P4Pi system, a platform that allows to design and deploy network data planes written in P4 language using this device. You can know more about and find tutorials about how to install and manage it [here](https://github.com/p4lang/p4pi/wiki). P4Pi runs a virtual switch, and you can choose two different targets, T4P4S and BMv2. We use **BMv2**. After setting it, we created and deployed in BMv2 a P4 program able to parse our INT header in a packet, save all INT data in it, and then deparse the header and send the packet back to our host. To finish Raspberry Pi configuration, we set the rate that the queues process packets:
+For Raspberry Pi we installed P4Pi system, a platform that allows to design and deploy network data planes written in P4 language using this device. P4Pi runs a virtual switch, and you can choose two different targets, T4P4S and BMv2. We use **BMv2**. After setting it, we created and deployed in BMv2 a P4 program able to parse our INT header in a packet, save all INT data in it, and then deparse the header and send the packet back to our host. To finish Raspberry Pi configuration, we set switch queue rate, and run Tshark to collect PCAP.
 
-    $ sudo simple_switch_CLI
-    $ set_queue_rate 2000
-
-For the experiments until now, we use value 2000 (packets processes by second). To collect pcap of the experiments, we use **tshark** in the Raspberry Pi:
-
-    $ sudo apt update
-    $ sudp apt install tshark
-    $ sudo tshark -a duration:900 exX.pcap
-
-We set time limit in 15 min (900 seconds) for our experiments.
+- [Install P4Pi]()
+- [Enable BMv2]()
+- [Launch P4 program]()
+- [Set Switch Queue Rate]()
+- [Install & Run Tshark]()
 
 #### (2-2-2) INT Host laptop setting
 
 Our host is one of the laptops, and it runs two Python programs. The first one is responsible for creating INT packets (with INT header), and sending it to the host's network interface, one packet by second. The second program sniffs the network interface waiting for the INT packets, and, by each packet received, it get the fields that we need and save the values in our time series database. We are using [InfluxDB](https://www.influxdata.com/).
+
+- [Configure InfluxDB account and Database to save INT data]()
+- [Run Client Scripts to Collect INT Data]()
 
 #### (2-2-3) CG Client specs
 
@@ -404,9 +402,11 @@ It is organized by the following order: Network connection > Game > Number of pl
 
 
 
-## (3) Install Tools & Run the Experiments    
+## (3) Install Tools & Run the Experiments
 
-### (3-1) Install FFmpeg [XR system]! [https://ffmpeg.org/]  
+### (3-1) AR Experiments
+
+#### (3-1-1) Install FFmpeg [XR system]! [https://ffmpeg.org/]  
 This tool uses a set of frames (in PNG format) to generate video in a specific frame rate and resolution!
 
     $ sudo apt-get update && sudo apt-get dist-upgrade
@@ -419,7 +419,7 @@ This tool uses a set of frames (in PNG format) to generate video in a specific f
 ![image](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/21206801/2eac8996-967f-4291-bd0d-842f2f5534c2)
 
 
-### (3-2) Generate Video using the Microsoft Sequential Frames! [XR system]
+#### (3-1-2) Generate Video using the Microsoft Sequential Frames! [XR system]
 
     $ ffmpeg -r [frame rate] -f image2 -s [resolution] -i [sequence of png files] -vcodec libx264 -crf 25 -pix_fmt yuv420p [video name in mp4]
  
@@ -434,12 +434,12 @@ This tool uses a set of frames (in PNG format) to generate video in a specific f
 **Output:**
 ![image](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/21206801/834385dc-0b05-4c88-81ed-b97b81f7f4a3)
 
-### (3-3) Install GStreamer (gst-launch) for Video Streaming [XR system]
+#### (3-1-3) Install GStreamer (gst-launch) for Video Streaming [XR system]
 [https://gstreamer.freedesktop.org/documentation/installing/on-linux.html?gi-language=c]
 
     $ sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio
 
-### (3-4) Stream the Video (Using GStreamer) with Specific resolution, frame rate, encoding, and Bitrate [XR system]**
+#### (3-1-4) Stream the Video (Using GStreamer) with Specific resolution, frame rate, encoding, and Bitrate [XR system]**
 
     $ gst-launch-1.0 -v filesrc location=./video1080_30.mp4 ! decodebin ! videoconvert ! videoscale ! video/x-raw,width=1920,height=1080 ! videorate ! video/x-raw,framerate=60/1 ! x264enc tune=zerolatency bitrate=5000 ! rtph264pay config-interval=1 pt=96 ! udpsink host=[IP address] port=[Port#]
     
@@ -457,13 +457,13 @@ This tool uses a set of frames (in PNG format) to generate video in a specific f
 
 ![image](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/21206801/dbf7b664-52af-4d19-816d-5f155fb9058a)
 
-### (3-5) Install the Tshark [XR_System & Edge Server]
+#### (3-1-5) Install the Tshark [XR_System & Edge Server]
       
       $ sudo apt update
   
       $ sudo apt install tshark
 
-### (3-6) Run Tshark To Collect the PCAP [XR_System & Edge Server]
+#### (3-1-6) Run Tshark To Collect the PCAP [XR_System & Edge Server]
 **Firstly**, extract the network interface name which needs to be sniffed!
      
       $ ip addr
@@ -485,3 +485,92 @@ This tool uses a set of frames (in PNG format) to generate video in a specific f
   
       $ tshark -i 4 -a duration:180 -w "\home\myfile.pcap"
 
+
+### (3-2) CG Experiments
+
+#### (3-2-1) Install P4Pi in Raspberry Pi and access through WiFi/SSH
+
+You can install P4Pi system in your Raspberry Pi following this [tutorial](https://github.com/p4lang/p4pi/wiki/Installing-P4Pi).
+After installing P4Pi, connect to it using SSH. You can see how to do this [here](https://github.com/p4lang/p4pi/wiki/P4Pi-Configuration#connecting-to-p4pi-through-wifi). 
+
+Connect your Raspberry Pi to your network by cable.
+
+#### (3-2-2) Enable BMv2 [Raspberry Pi]
+
+Enable BMv2 virtual switch:
+
+    sudo systemctl stop t4p4s.service
+    sudo systemctl disable t4p4s.service
+    sudo systemctl enable bmv2.service
+
+#### (3-2-3) Launch P4 program [Raspberry Pi]
+
+Firstly, let's add the script *[int.p4](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/blob/main/CG%20setup/int.p4)* to P4Pi:
+
+    sudo su
+    cd /root/bmv2/examples
+    mkdir int
+    cd int
+
+To create and edit the file, you can do this with *nano* editor:
+
+    apt update
+    apt install nano
+    nano int.p4
+
+Then, copy and paste *[int.p4](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/blob/main/CG%20setup/int.p4)* script, and save it.
+
+Lastly, launch the program:
+
+    echo 'int' > /root/t4p4s-switch
+    systemctl restart bmv2.service
+
+#### (3-2-4) Set Switch Queue Rate [Raspberry Pi]
+
+You can change the queue rate of the BMv2 switch, we setted it **2000** packets per second in our experiments:
+
+    sudo simple_switch_CLI
+    set_queue_rate 2000
+
+Enter *Ctrl + C* to exit the switch CLI.
+
+#### (3-2-5) Install & Run Tshark to Collect PCAP [Raspberry Pi]
+
+Follow [(3-1-5)](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/tree/cg-tools?tab=readme-ov-file#3-1-5-install-the-tshark-xr_system--edge-server)
+and [(3-1-6)](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/tree/cg-tools?tab=readme-ov-file#3-1-6-run-tshark-to-collect-the-pcap-xr_system--edge-server)
+sections!
+
+#### (3-2-6) Configure InfluxDB account and Database to save INT data
+
+Create a InfluxDB account and then create a database for save your INT data [here!](https://cloud2.influxdata.com/signup)
+
+Then, you have to get a token to authenticate your client PC or laptop: 
+
+In the Resource Center, go to Add Data > Application Code > Python > View Guide > Get Token, and save the generated token as an environment variable.
+
+#### (3-2-7) Run Client Scripts to Collect INT Data
+
+You need to have [Python 3](https://www.python.org/) installed on your client PC or laptop.
+
+Download *[send.py](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/blob/cg-tools/CG%20setup/send.py)* and *[receive.py](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/blob/cg-tools/CG%20setup/receive.py)* scripts.
+
+After that, you need to complete few lines in _receive.py_ script. Insert the values for _org_, _host_ and _database_, according to your InfluxDB account and database.
+
+Finally, run both scripts in different terminals:
+
+Send:
+
+    cd [Scripts Folder]
+    python send.py
+
+Receive:
+
+    cd [Scripts Folder]
+    python receive.py [Experiment ID] [Duration in minutes]
+
+Obs: It's necessary to run Receive and Tshark at the same time!
+
+
+#### (3-2-8) Play Cloud Gaming
+
+Now you can open Xbox Cloud Gaming website and play a game to collect data.
