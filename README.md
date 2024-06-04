@@ -193,23 +193,20 @@ Our setup is based in Raspberry Pi (Model 4), and one or two laptops.
 
 #### (2-2-1) Raspberry Pi setting
 
-For Raspberry Pi we installed P4Pi system, a platform that allows to design and deploy network data planes written in P4 language using this device. P4Pi runs a virtual switch, and you can choose two different targets, T4P4S and BMv2. We use **BMv2**. After setting it, we created and deployed in BMv2 a P4 program able to parse our INT header in a packet, save all INT data in it, and then deparse the header and send the packet back to our host. To finish Raspberry Pi configuration, we set the rate that the queues process packets:
+For Raspberry Pi we installed P4Pi system, a platform that allows to design and deploy network data planes written in P4 language using this device. P4Pi runs a virtual switch, and you can choose two different targets, T4P4S and BMv2. We use **BMv2**. After setting it, we created and deployed in BMv2 a P4 program able to parse our INT header in a packet, save all INT data in it, and then deparse the header and send the packet back to our host. To finish Raspberry Pi configuration, we set switch queue rate, and run Tshark to collect PCAP.
 
-    $ sudo simple_switch_CLI
-    $ set_queue_rate 2000
-
-For the experiments until now, we use value 2000 (packets processes by second). To collect pcap of the experiments, we use **tshark** in the Raspberry Pi:
-
-    $ sudo apt update
-    $ sudp apt install tshark
-    $ sudo tshark -a duration:900 exX.pcap
-
-We set time limit in 15 min (900 seconds) for our experiments.
+- [Install P4Pi]()
+- [Enable BMv2]()
+- [Launch P4 program]()
+- [Set Switch Queue Rate]()
+- [Install & Run Tshark]()
 
 #### (2-2-2) INT Host laptop setting
 
 Our host is one of the laptops, and it runs two Python programs. The first one is responsible for creating INT packets (with INT header), and sending it to the host's network interface, one packet by second. The second program sniffs the network interface waiting for the INT packets, and, by each packet received, it get the fields that we need and save the values in our time series database. We are using [InfluxDB](https://www.influxdata.com/).
 
+- [Configure InfluxDB account and Database to save INT data]()
+- [Run Client Scripts to Collect INT Data]()
 
 #### (2-2-3) CG Client specs
 
@@ -528,7 +525,7 @@ Lastly, launch the program:
     echo 'int' > /root/t4p4s-switch
     systemctl restart bmv2.service
 
-#### (3-2-4) Set switch queue rate [Raspberry Pi]
+#### (3-2-4) Set Switch Queue Rate [Raspberry Pi]
 
 You can change the queue rate of the BMv2 switch, we setted it **2000** packets per second in our experiments:
 
@@ -547,11 +544,19 @@ sections!
 
 Create a InfluxDB account and then create a database for save your INT data [here!](https://cloud2.influxdata.com/signup)
 
+Then, you have to get a token to authenticate your client PC or laptop: 
+
+In the Resource Center, go to Add Data > Application Code > Python > View Guide > Get Token, and save the generated token as an environment variable.
+
 #### (3-2-7) Run Client Scripts to Collect INT Data
 
-You need to have [Python 3](https://www.python.org/) installed on your client PC or notebook.
+You need to have [Python 3](https://www.python.org/) installed on your client PC or laptop.
 
-Download *[send.py](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/blob/cg-tools/CG%20setup/send.py)* and *[receive.py](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/blob/cg-tools/CG%20setup/receive.py)* scripts. Then, run both in different terminals.
+Download *[send.py](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/blob/cg-tools/CG%20setup/send.py)* and *[receive.py](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/blob/cg-tools/CG%20setup/receive.py)* scripts.
+
+After that, you need to complete few lines in _receive.py_ script. Insert the values for _org_, _host_ and _database_, according to your InfluxDB account and database.
+
+Finally, run both scripts in different terminals:
 
 Send:
 
