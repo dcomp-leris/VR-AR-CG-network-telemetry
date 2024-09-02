@@ -27,7 +27,7 @@ In this experiment, we use video streaming to simulate the AR glasses Uplink (UL
 
 ### (1-1) Experiment1 - (Mimicking VR/AR Glasses!)
 
-In this dataset, we wanted to collect the network traffic of the Augmented Reality (AR) use case in which a user is equipped with AR glasses and moving in the scene. The frames related to the scenes are sent to the edge server for rendering (UL) and AR glasses receive the rendered video (real+digital objects) from the edge server (DL) as shown in Fig.1.
+In this dataset, we wanted to collect the network traffic of the Augmented Reality (AR) use case in which a user is equipped with AR glasses and moving in the scene inspired by ITU-T Q.4066. The frames related to the scenes are sent to the edge server for rendering (UL) and AR glasses receive the rendered video (real+digital objects) from the edge server (DL) as shown in Fig.1.
 
 <div align="center">
   <img src="GeneralScenario.png">
