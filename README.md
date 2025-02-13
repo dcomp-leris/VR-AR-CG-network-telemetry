@@ -409,11 +409,11 @@ It is organized by the following order: Network connection > Game > Number of pl
 #### (3-1-1) Install FFmpeg [XR system]! [https://ffmpeg.org/]  
 This tool uses a set of frames (in PNG format) to generate video in a specific frame rate and resolution!
 
-    $ sudo apt-get update && sudo apt-get dist-upgrade
+    sudo apt-get update && sudo apt-get dist-upgrade
   
-    $ sudo apt-get install ffmpeg
+    sudo apt-get install ffmpeg
 
-    $ ffmpeg -version
+    ffmpeg -version
     
 **Output:**
 ![image](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/21206801/2eac8996-967f-4291-bd0d-842f2f5534c2)
@@ -421,7 +421,7 @@ This tool uses a set of frames (in PNG format) to generate video in a specific f
 
 #### (3-1-2) Generate Video using the Microsoft Sequential Frames! [XR system]
 
-    $ ffmpeg -r [frame rate] -f image2 -s [resolution] -i [sequence of png files] -vcodec libx264 -crf 25 -pix_fmt yuv420p [video name in mp4]
+    ffmpeg -r [frame rate] -f image2 -s [resolution] -i [sequence of png files] -vcodec libx264 -crf 25 -pix_fmt yuv420p [video name in mp4]
  
  - ***[frame rate]*** -- > e.g. 30, 60, 90, 120 (fps)
  - ***[resolution]*** --> e.g. 1920x1080 
@@ -437,11 +437,11 @@ This tool uses a set of frames (in PNG format) to generate video in a specific f
 #### (3-1-3) Install GStreamer (gst-launch) for Video Streaming [XR system]
 [https://gstreamer.freedesktop.org/documentation/installing/on-linux.html?gi-language=c]
 
-    $ sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio
+    sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio
 
 #### (3-1-4) Stream the Video (Using GStreamer) with Specific resolution, frame rate, encoding, and Bitrate [XR system]**
 
-    $ gst-launch-1.0 -v filesrc location=./video1080_30.mp4 ! decodebin ! videoconvert ! videoscale ! video/x-raw,width=1920,height=1080 ! videorate ! video/x-raw,framerate=60/1 ! x264enc tune=zerolatency bitrate=5000 ! rtph264pay config-interval=1 pt=96 ! udpsink host=[IP address] port=[Port#]
+    gst-launch-1.0 -v filesrc location=./video1080_30.mp4 ! decodebin ! videoconvert ! videoscale ! video/x-raw,width=1920,height=1080 ! videorate ! video/x-raw,framerate=60/1 ! x264enc tune=zerolatency bitrate=5000 ! rtph264pay config-interval=1 pt=96 ! udpsink host=[IP address] port=[Port#]
     
 
 - ***[location=./video1080_30.mp4]*** --> location of the video
@@ -459,14 +459,14 @@ This tool uses a set of frames (in PNG format) to generate video in a specific f
 
 #### (3-1-5) Install the Tshark [XR_System & Edge Server]
       
-      $ sudo apt update
+      sudo apt update
   
-      $ sudo apt install tshark
+      sudo apt install tshark
 
 #### (3-1-6) Run Tshark To Collect the PCAP [XR_System & Edge Server]
 **Firstly**, extract the network interface name which needs to be sniffed!
      
-      $ ip addr
+      ip addr
       
   **output:**
   
@@ -476,14 +476,14 @@ This tool uses a set of frames (in PNG format) to generate video in a specific f
 **Secondly**, run the Tshark to listen to the specific interface and set the address to store the pcap file!
 
     
-      $ sudo tshark -i [Interface Name] -w [File Address] 
+      sudo tshark -i [Interface Name] -w [File Address] 
 
 - **[Interface Name]**: Extracted from the first command!
 - **[File Address]**: The address to which the pcap file should be stored!
 
 **For example**, we can run the following command in the Terminal to sniff interface number 4 (extracted from the first command!) for 180 sec and store it in the address "/home/myfile.pcap":
   
-      $ tshark -i 4 -a duration:180 -w "\home\myfile.pcap"
+      tshark -i 4 -a duration:180 -w "\home\myfile.pcap"
 
 
 ### (3-2) CG Experiments
