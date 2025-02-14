@@ -5,10 +5,14 @@
 <br><br><br><br>
 
 
+[![AR/VR PCAP](https://img.shields.io/badge/PCAP-AR/VR-blue)](https://www.kaggle.com/datasets/a906acd0ce4c8ee03048bf10c06573547ddca5a5c775ba592306bd04038f3a56)
+[![CG](https://img.shields.io/badge/PCAP-CloudGame-red)](https://www.kaggle.com/datasets/bff9c84e3e1db2659962e9ab161597059f4268d66d336f84073b59bed377528c)
+
+
 
 
 <!--![leris](https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/58492556/67a96a00-c791-46b3-afac-daf3ae212aeb)-->
-<!Version 1.00 is ready for internal evaluation>
+<!Version 2.00 is ready for internal evaluation>
 
 # VR-AR-CG Network Traffic Datasets 
 In this repository, collected network traffic datasets regarding Virtual Reality (VR), Augmented Reality (AR), and Cloud Gaming (CG), are shared publicly. 
