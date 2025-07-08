@@ -230,7 +230,7 @@ The host laptop (+ the second one just for playing) connects by Wi-Fi/wireless c
 The following figure represents our described setup:
 
 <div align="center">
-  <img src="https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/58492556/68a6c851-8863-43cd-aa0b-abb75a128d56" width="80%" height="80%">
+  <img src="https://github.com/dcomp-leris/VR-AR-CG-network-telemetry/assets/58492556/68a6c851-8863-43cd-aa0b-abb75a128d56" width="80%" height="300%">
 </div>
 
 <p align="center">
