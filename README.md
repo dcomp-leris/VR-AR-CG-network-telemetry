@@ -587,5 +587,5 @@ Please cite one of the following references for this repository.
 
 - [1] A. Shirmarz, F. L. Verdi, S. K. Singh and C. E. Rothenberg, "From Pixels to Packets: Traffic Classification of Augmented Reality and Cloud Gaming," 2024 IEEE 10th International Conference on Network Softwarization (NetSoft), Saint Louis, MO, USA, 2024, pp. 195-203, doi: 10.1109/NetSoft60951.2024.10588893.
 - [2] Shirmarz, Alireza, Carlos Henrique de França Marques, Fábio Luciano Verdi, Roberto Silva Netto, Suneet Kumar Singh, and Christian Esteve Rothenberg. "DCTPQ: Dynamic Cloud Gaming Traffic Prioritization Using Machine Learning and Multi-Queueing for QoE Enhancement." In Simpósio Brasileiro de Redes de Computadores e Sistemas Distribuídos (SBRC), pp. 476-489. SBC, 2025.
-- [3] Shirmarz, Alireza, Ariel G. de Castro, Fabio L. Verdi, and Christian E. Rothenberg. "CGReplay: Capture and Replay of Cloud Gaming Traffic for QoE/QoS Assessment." arXiv preprint arXiv:2505.11973 (2025).
+- [3] A. Shirmarz, A. G. de Castro, F. L. Verdi and C. E. Rothenberg, "CGReplay: Capture and Replay of Cloud Gaming Traffic for QoE/QoS Assessment," 2025 IEEE 11th International Conference on Network Softwarization (NetSoft), Budapest, Hungary, 2025, pp. 312-314, doi: 10.1109/NetSoft64993.2025.11080563.
 
